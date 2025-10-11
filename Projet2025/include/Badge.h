@@ -8,6 +8,7 @@ using namespace std;
 //Classe Badge repertorie tous les badges des personnes par id et nom complet d'utilisaeur + vision de la validite du badge
 class Badge {
 private:
+    static int compteurIdBadge;
     int idBadge;
     Personne& utilisateur;
     bool validite;
@@ -15,14 +16,16 @@ public:
     //Constructeur par defaut
     Badge() = delete; //Impossible de creer un badge sans utilisateur
     //Constructeur par recopie
-    Badge(const Badge& b): idBadge(b.idBadge), utilisateur(b.utilisateur), validite(b.validite) {};
+    Badge(const Badge& b): idBadge(compteurIdBadge++), utilisateur(b.utilisateur), validite(b.validite) {};
     //Operateur affectation
     Badge& operator=(const Badge &b);
     //Destructeur
     ~Badge() {};
 
+    //Constructeur, validite non renseigner donc badge desactive
+    Badge(Personne& utilisateur):idBadge(compteurIdBadge++),utilisateur(utilisateur), validite(false) {};
     //Constructeur le plus utilise, tout est renseigne
-    Badge(int idBadge, Personne& utilisateur):idBadge(idBadge),utilisateur(utilisateur), validite(false) {};
+    Badge(Personne& utilisateur, bool validite):idBadge(compteurIdBadge++),utilisateur(utilisateur), validite(validite) {};
 
     //Permet de savoir si le badge est active
     bool isActif()const;
@@ -30,6 +33,8 @@ public:
     void turnValidOn();
     //Permet e rendre le badge inactif
     void turnValidOff();
+    //Permet d'obtenir l'id du badge
+    int getIdBadge(){return this->idBadge;};
 
     //Renvoie la personne proprietaire du badge
     Personne& getUtilisateur() const;

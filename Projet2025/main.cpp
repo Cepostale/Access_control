@@ -9,13 +9,15 @@
 
 int main() {
 
-    auto jean = Personne("Martin", "Jean", "Enseignant");
-    string nom = jean.getNomComplet();
-    string statut = jean.getStatut();
-    cout << nom << " " << statut << endl;
-
-    auto serveurUnique = Serveur("../DescriptionFile.csv", "LogFile.csv" );
+    //Creation du serveur
+    cout << "\nINITIALISATION DU SERVEUR..." << endl;
+    Serveur serveurUnique = Serveur("../DescriptionFile.csv", "../LogFile.txt" );
+    //Chargement de la configuration
     bool reponse = serveurUnique.loadConfiguration();
+
+    Scheduler sched = Scheduler(serveurUnique);
+    sched.initialisation(serveurUnique);
+
 
     return 0;
 }

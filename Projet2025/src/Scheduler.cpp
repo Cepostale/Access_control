@@ -9,7 +9,6 @@
 using namespace std;
 
 Scheduler& Scheduler::operator=(const Scheduler& sche) {
-    this->serveur = sche.serveur;
     this->lecteurs = sche.lecteurs;
     this->badges = sche.badges;
     this->intervalleSimulation = sche.intervalleSimulation;
@@ -20,13 +19,89 @@ Scheduler& Scheduler::operator=(const Scheduler& sche) {
     return *this;
 }
 
-//Annonce le debut de la journee dans la console
 Scheduler :: Scheduler(Serveur& serv, double debut, double fin, int intervalle) : serveur(serv), intervalleSimulation(intervalle), simulationEnCours(false), heureSimulation(debut), heureDebut(debut), heureFin(fin) {
     cout << "Scheduler (ordonnanceur) initialise: " << getHeureSimulation() << " a " << fin << "h (" << (fin - debut)*60 << " minutes)" << endl;
 }
 
 Scheduler::~Scheduler() {
     arreterSimulation();
+}
+
+void Scheduler::initialisation(Serveur& serv) {
+    cout << "DEMARRAGE DU SYSTEME DE SECURITE" << endl;
+    cout << "===================================" << endl;
+
+    //1. Creation des personnes
+    cout << "\nCREATION DES PERSONNES..." << endl;
+    Personne lila = Personne("Bois", "Lila", "Eleve");
+    Personne hugo = Personne("Fevri", "Hugo", "Securite");
+    Personne martin = Personne("Rio", "Martin", "Eleve");
+    Personne marie = Personne("Poule", "Marie", "Eleve");
+    Personne valerie = Personne("Didio", "Valerie", "Eleve");
+
+    cout << "5 personnes creees" << endl;
+
+    //2. Creation des badges
+    // Activation de certains badges (simulation de badges valides/invalides)
+    cout << "\nCREATION DES BADGES..." << endl;
+    Badge lilaBadge = Badge(lila, true);
+    Badge hugoBadge = Badge(hugo);
+    Badge martinBadge = Badge(martin, true);
+    Badge marieBadge = Badge(marie, true);
+    Badge valerieBadge = Badge(valerie, true);
+
+    cout << "5 badges crees (1 inactif)" << endl;
+
+    //3. Creation du serveur
+    serveur = serv;
+
+    //4. Création des lecteurs et des badges
+    cout << "\nINSTALLATION DES LECTEURS..." << endl;
+    LecteurBadge lecteurBatimentA = LecteurBadge("Batiment A - Porte Principale", "Batiment", serveur);
+    LecteurBadge lecteurSalle1 = LecteurBadge("Batiment A - Salle1", "Classe", serveur);
+    LecteurBadge lecteurBatimentB = LecteurBadge("Batiment B - Porte Principale", "Batiment", serveur);
+    LecteurBadge lecteurLabo = LecteurBadge("Batiment B - Laboratoire", "Laboratoire", serveur);
+    cout << "4 lecteurs installes" << endl;
+
+    //6. Ajout des badges et des lecteurs au scheduler
+    cout << "\nCONNEXION DES COMPOSANTS..." << endl;
+
+    //Ajout des badges
+    ajouterBadge(&lilaBadge);
+    ajouterBadge(&hugoBadge);
+    ajouterBadge(&martinBadge);
+    ajouterBadge(&marieBadge);
+    ajouterBadge(&valerieBadge);
+
+    // Ajout des lecteurs
+    ajouterLecteurBadge(&lecteurBatimentA);
+    ajouterLecteurBadge(&lecteurSalle1);
+    ajouterLecteurBadge(&lecteurBatimentB);
+    ajouterLecteurBadge(&lecteurLabo);
+
+    cout <<"Tous les composants connectes" << endl;
+
+    //7. Affichage de la configuration
+    cout << "\nCONFIGURATION DU SYSTEME :" << endl;
+    cout << "============================" << endl;
+    cout << "- Periode de simulation: 7h30 - 19h00" << endl;
+    cout << "- Intervalle reel: 1 seconde = 15 minutes simulees" << endl;
+    cout << "- Duree reelle: ~46 secondes" << endl;
+
+    //8. Lancement de la simulation complete
+    cout << "\nLANCEMENT DE LA SIMULATION COMPLETE" << endl;
+    cout << "====================================" << endl;
+
+    cout << "Appuyez sur Entree pour commencer...";
+    cin.get(); // Pause avant de commencer
+
+    simulation();
+
+    //9. Conclusion
+    cout << "\nSIMULATION TERMINEE" << endl;
+    cout << "====================" << endl;
+    cout << "Resume de la journee dans les logs" << endl;
+    cout << "Analysez les motifs de refus d'acces" << endl;
 }
 
 void Scheduler::simulation() {
@@ -36,7 +111,6 @@ void Scheduler::simulation() {
     cout << "DEBUT DE LA SIMULATION DE LA JOURNEE" << endl;
     ecrireLog("Debut de la simulation", true);
     cout << "Periode: " << getHeureSimulation() << " a " << heureFin << "h" << endl;
-    cout << "Duree reelle: " << ((heureFin - heureDebut) * 60 / 2) << " secondes" << endl;
 
     //Tant que l'heure affiche ne correspond pas a la fin de la journee de la simulation, on augmente de 15 min (1 cycle)
     while (simulationEnCours && heureSimulation < heureFin) {
@@ -77,12 +151,10 @@ void Scheduler::simulation() {
     }
 }
 
-//True si l'heure de la simulation est entre 7h30 et 19h sinon false
 bool Scheduler::estHeureOuverture() const {
     return (heureSimulation >= heureDebut && heureSimulation <= heureFin);
 }
 
-//Creation d'evenement en fonction des heure de la journee de simulation. Moment de pointe et de creu.
 void Scheduler::genererEvenementAleatoire() {
     if (badges.empty() || lecteurs.empty()) {
         cout << "ATTENTION Aucun badge ou lecteur disponible!!!!!!" << endl;
@@ -120,7 +192,7 @@ void Scheduler::genererEvenementAleatoire() {
     uniform_real_distribution<> disChance(0, 1); //Genere un nombre decimal entre 0 et 1
 
     if (disChance(gen) > probabilite) { //Si le chiffre genere est superieur a la probabilite d'evenement, rien ne se passe.
-        cout << "Aucun événement ce cycle" << endl;
+        cout << "Aucun evenement ce cycle" << endl;
         ecrireLog("Aucun evenement ce cycle", false);
         return;
     }
@@ -141,7 +213,6 @@ void Scheduler::genererEvenementAleatoire() {
     }
 }
 
-//Incremente le temps de la simulation toutes les deux secondes
 void Scheduler::incrementerHeure() {
     heureSimulation += 0.25; //15 minutes par cycle
 
@@ -151,7 +222,6 @@ void Scheduler::incrementerHeure() {
     }
 }
 
-//Permet d'afficher l'heure de la simulation pour l'ecrire dans les logs
 string Scheduler::getHeureSimulation() const {
     int heures = static_cast<int>(heureSimulation); //Enleve la partie decimale de l'heure de la simulation
     int minutes = static_cast<int>((heureSimulation - heures) * 60); //Recupere la partie decimale de l'heure de la simulation
@@ -161,7 +231,6 @@ string Scheduler::getHeureSimulation() const {
     return string(buffer);
 }
 
-//Utilise la methode du serveur pour ecrire dans les logs
 void Scheduler::ecrireLog(const string& message, bool isSchedulerLog = true) {
 
     stringstream logMessage;
@@ -184,7 +253,6 @@ void Scheduler::ajouterBadge(Badge* badge) {
     cout << "Badge ajoute: " << badge->getUtilisateur().getNomComplet() << endl;
 }
 
-//Arrete la simulation
 void Scheduler::arreterSimulation() {
     simulationEnCours = false;
 }

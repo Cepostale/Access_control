@@ -18,7 +18,7 @@ Serveur& Serveur::operator=(const Serveur &s) {
 
 ResultatVerification Serveur::verifierTotalAcces(const Badge& badge, const LecteurBadge& lecteur) {
     string statut = badge.getUtilisateur().getStatut();
-    string batiment = lecteur.getLocalisation();
+    string batiment = lecteur.getTypePorte();
 
     //Verifie si le badge est actif
     if (!badge.isActif()) {
@@ -32,12 +32,12 @@ ResultatVerification Serveur::verifierTotalAcces(const Badge& badge, const Lecte
 
     //Verifie si le batiment est configure pour ce statut
     if (droitsAcces[statut].find(batiment) == droitsAcces[statut].end()) {
-        return {false, "Acces à '" + batiment + "' non configure pour " + statut};
+        return {false, "Acces a '" + batiment + "' non configure pour " + statut};
     }
 
     //Verifie les droits
     if (!droitsAcces[statut][batiment]) {
-        return {false, statut + " n'a pas l'autorisation d'acceder à '" + batiment + "'"};
+        return {false, statut + " n'a pas l'autorisation d'acceder a '" + batiment + "'"};
     }
 
     //Si tout est bon l'acces est autorise
@@ -73,7 +73,7 @@ bool Serveur:: askAcces( Badge& badge, LecteurBadge& lecteur, const string& heur
     saveLogs(messageLog.str(), heureSimulation);
 
     //Affichage console detaille
-    cout << "\n=== DEMANDE D'ACCÈS ===" << endl;
+    cout << "\n=== DEMANDE D'ACCES ===" << endl;
     cout << "Heure: " << heureSimulation << endl;
     cout << "Personne: " << nomPersonne << endl;
     cout << "Statut: " << statutPersonne << endl;

@@ -1,11 +1,15 @@
 #include "../include/LecteurBadge.h"
 #include "../include/Serveur.h"
 
+//Initialisation du compteur de lecteur à 1 pour le premier
+int LecteurBadge::compteurId = 1;
+
 LecteurBadge& LecteurBadge::operator=(const LecteurBadge &l) {
-  this->idLecteur = l.idLecteur;
-  this->localisation = l.localisation;
-  this->typePorte = l.typePorte;
-  this->serv = l.serv;
+  if (this != &l) {
+    this->localisation = l.localisation;
+    this->typePorte = l.typePorte;
+    //Pas d'affection de l'id
+  }
   return *this;
 }
 
@@ -15,10 +19,6 @@ bool LecteurBadge :: askAutorisation( Badge& b, const string& heureSimulation){
   cout << "Type de porte: " << typePorte;
 
   return serv.askAcces(b, *this, heureSimulation);
-}
-
-string LecteurBadge::getLocalisation() const{
-  return localisation;
 }
 
 void LecteurBadge::openPorte() {
