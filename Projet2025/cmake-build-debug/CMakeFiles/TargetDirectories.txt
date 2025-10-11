@@ -1,0 +1,3 @@
+C:/Users/journ/Documents/Branche1/AP4/C++/Projet2025/cmake-build-debug/CMakeFiles/Projet2025.dir
+C:/Users/journ/Documents/Branche1/AP4/C++/Projet2025/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/journ/Documents/Branche1/AP4/C++/Projet2025/cmake-build-debug/CMakeFiles/rebuild_cache.dir

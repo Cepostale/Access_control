@@ -1,0 +1,17 @@
+# ninja log v6
+37	1113	7804047069715885	CMakeFiles/Projet2025.dir/main.cpp.obj	3e162f533700b10d
+84	364	7804039801466928	CMakeFiles/Projet2025.dir/src/Scheduler.cpp.obj	bd97d4b59246fea7
+1114	1428	7804047080483144	Projet2025.exe	375f7407fb29f5c6
+80	1032	7804042519802792	CMakeFiles/Projet2025.dir/src/Badge.cpp.obj	e51a5967e2ac7d06
+92	1256	7804042519910190	CMakeFiles/Projet2025.dir/src/LecteurBadge.cpp.obj	5638d2f5ac6c1b45
+107	1165	7804088758083503	build.ninja	8924cf1ab5167954
+71	1145	7804039801346005	CMakeFiles/Projet2025.dir/src/Personne.cpp.obj	99a66cb993d4a851
+57	1629	7804046124909462	CMakeFiles/Projet2025.dir/src/Serveur.cpp.obj	a59200b3b3f44865
+107	1332	7816324865274833	CMakeFiles/Projet2025.dir/src/Badge.cpp.obj	e51a5967e2ac7d06
+134	1371	7816324865549517	CMakeFiles/Projet2025.dir/src/Personne.cpp.obj	99a66cb993d4a851
+121	1513	7816324865417385	CMakeFiles/Projet2025.dir/src/LecteurBadge.cpp.obj	5638d2f5ac6c1b45
+167	3402	7816324865877376	CMakeFiles/Projet2025.dir/src/Serveur.cpp.obj	a59200b3b3f44865
+11	3109	7816325713356703	CMakeFiles/Projet2025.dir/main.cpp.obj	3e162f533700b10d
+12	2982	7816342236052473	CMakeFiles/Projet2025.dir/main.cpp.obj	3e162f533700b10d
+27	3345	7816342236202648	CMakeFiles/Projet2025.dir/src/Scheduler.cpp.obj	bd97d4b59246fea7
+3345	4165	7816342269382578	Projet2025.exe	375f7407fb29f5c6

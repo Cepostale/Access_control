@@ -1,0 +1,6 @@
+Statut,Batiment,Classe,Laboratoire,ZoneSecurisee,ZoneAdministrative,Bibliothèque,Cafeteria
+Eleve,1,0,0,0,0,1,1
+Professeur,1,1,0,0,0,1,1
+Chercheur,0,0,1,0,0,1,1
+Securite,1,1,0,1,1,1,1
+Administration,1,0,0,0,1,1,1
