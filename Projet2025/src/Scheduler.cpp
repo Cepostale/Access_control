@@ -31,7 +31,10 @@ void Scheduler::initialisation(Serveur& serv) {
     cout << "DEMARRAGE DU SYSTEME DE SECURITE" << endl;
     cout << "===================================" << endl;
 
-    //1. Creation des personnes
+    //1. Chargement de la configuration
+    bool reponse = serv.loadConfiguration();
+
+    //2. Creation des personnes
     cout << "\nCREATION DES PERSONNES..." << endl;
     Personne lila = Personne("Bois", "Lila", "Eleve");
     Personne hugo = Personne("Fevri", "Hugo", "Securite");
@@ -41,7 +44,7 @@ void Scheduler::initialisation(Serveur& serv) {
 
     cout << "5 personnes creees" << endl;
 
-    //2. Creation des badges
+    //3. Creation des badges
     // Activation de certains badges (simulation de badges valides/invalides)
     cout << "\nCREATION DES BADGES..." << endl;
     Badge lilaBadge = Badge(lila, true);
@@ -52,10 +55,7 @@ void Scheduler::initialisation(Serveur& serv) {
 
     cout << "5 badges crees (1 inactif)" << endl;
 
-    //3. Creation du serveur
-    serveur = serv;
-
-    //4. Création des lecteurs et des badges
+    //4. Creation des lecteurs
     cout << "\nINSTALLATION DES LECTEURS..." << endl;
     LecteurBadge lecteurBatimentA = LecteurBadge("Batiment A - Porte Principale", "Batiment", serveur);
     LecteurBadge lecteurSalle1 = LecteurBadge("Batiment A - Salle1", "Classe", serveur);
@@ -63,7 +63,7 @@ void Scheduler::initialisation(Serveur& serv) {
     LecteurBadge lecteurLabo = LecteurBadge("Batiment B - Laboratoire", "Laboratoire", serveur);
     cout << "4 lecteurs installes" << endl;
 
-    //6. Ajout des badges et des lecteurs au scheduler
+    //5. Ajout des badges et des lecteurs au scheduler
     cout << "\nCONNEXION DES COMPOSANTS..." << endl;
 
     //Ajout des badges
@@ -73,7 +73,7 @@ void Scheduler::initialisation(Serveur& serv) {
     ajouterBadge(&marieBadge);
     ajouterBadge(&valerieBadge);
 
-    // Ajout des lecteurs
+    //Ajout des lecteurs
     ajouterLecteurBadge(&lecteurBatimentA);
     ajouterLecteurBadge(&lecteurSalle1);
     ajouterLecteurBadge(&lecteurBatimentB);
@@ -81,23 +81,23 @@ void Scheduler::initialisation(Serveur& serv) {
 
     cout <<"Tous les composants connectes" << endl;
 
-    //7. Affichage de la configuration
+    //6. Affichage de la configuration
     cout << "\nCONFIGURATION DU SYSTEME :" << endl;
     cout << "============================" << endl;
     cout << "- Periode de simulation: 7h30 - 19h00" << endl;
     cout << "- Intervalle reel: 1 seconde = 15 minutes simulees" << endl;
     cout << "- Duree reelle: ~46 secondes" << endl;
 
-    //8. Lancement de la simulation complete
+    //7. Lancement de la simulation complete
     cout << "\nLANCEMENT DE LA SIMULATION COMPLETE" << endl;
     cout << "====================================" << endl;
 
-    cout << "Appuyez sur Entree pour commencer...";
+    cout << "Appuyez sur Entree pour commencer...\n";
     cin.get(); // Pause avant de commencer
 
     simulation();
 
-    //9. Conclusion
+    //8. Conclusion
     cout << "\nSIMULATION TERMINEE" << endl;
     cout << "====================" << endl;
     cout << "Resume de la journee dans les logs" << endl;

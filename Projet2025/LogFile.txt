@@ -186,3 +186,97 @@
 [REEL: 2025-10-11 23:15:00 SIMU: 18:30]Aucun evenement ce cycle
 [REEL: 2025-10-11 23:15:01 SIMU: 18:45]ACTIVITE REDUITE
 [REEL: 2025-10-11 23:15:01 SIMU: 18:45]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:46:53 SIMU: 07:30]SCHEDULER - Debut de la simulation
+[REEL: 2025-10-15 10:46:53 SIMU: 07:30]SCHEDULER - Ouverture du campus - Debut de la journee
+[REEL: 2025-10-15 10:46:53 SIMU: 07:30]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:46:53 SIMU: 07:30]DEMANDE_ACCES - Heure: 07:30 - Personne: Poule Marie | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: AUTORISE
+[REEL: 2025-10-15 10:46:54 SIMU: 07:45]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:46:54 SIMU: 07:45]DEMANDE_ACCES - Heure: 07:45 - Personne: Rio Martin | Statut: Eleve | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Eleve n'a pas l'autorisation d'acceder a 'Laboratoire'
+[REEL: 2025-10-15 10:46:55 SIMU: 08:00]HEURE DE POINTE FORTE  - Pic d'activite
+[REEL: 2025-10-15 10:46:55 SIMU: 08:00]DEMANDE_ACCES - Heure: 08:00 - Personne: Poule Marie | Statut: Eleve | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+[REEL: 2025-10-15 10:46:56 SIMU: 08:15]HEURE DE POINTE FORTE  - Pic d'activite
+[REEL: 2025-10-15 10:46:56 SIMU: 08:15]DEMANDE_ACCES - Heure: 08:15 - Personne: Poule Marie | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: AUTORISE
+[REEL: 2025-10-15 10:46:57 SIMU: 08:30]HEURE DE POINTE FORTE  - Pic d'activite
+[REEL: 2025-10-15 10:46:57 SIMU: 08:30]DEMANDE_ACCES - Heure: 08:30 - Personne: Poule Marie | Statut: Eleve | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Eleve n'a pas l'autorisation d'acceder a 'Laboratoire'
+[REEL: 2025-10-15 10:46:58 SIMU: 08:45]HEURE DE POINTE FORTE  - Pic d'activite
+[REEL: 2025-10-15 10:46:59 SIMU: 08:45]DEMANDE_ACCES - Heure: 08:45 - Personne: Rio Martin | Statut: Eleve | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Eleve n'a pas l'autorisation d'acceder a 'Laboratoire'
+[REEL: 2025-10-15 10:47:00 SIMU: 09:00]HEURE DE POINTE FORTE  - Pic d'activite
+[REEL: 2025-10-15 10:47:00 SIMU: 09:00]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:01 SIMU: 09:15]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:01 SIMU: 09:15]DEMANDE_ACCES - Heure: 09:15 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:02 SIMU: 09:30]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:02 SIMU: 09:30]DEMANDE_ACCES - Heure: 09:30 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:03 SIMU: 09:45]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:03 SIMU: 09:45]DEMANDE_ACCES - Heure: 09:45 - Personne: Rio Martin | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:04 SIMU: 10:00]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:04 SIMU: 10:00]DEMANDE_ACCES - Heure: 10:00 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:05 SIMU: 10:15]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:05 SIMU: 10:15]DEMANDE_ACCES - Heure: 10:15 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:06 SIMU: 10:30]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:06 SIMU: 10:30]DEMANDE_ACCES - Heure: 10:30 - Personne: Rio Martin | Statut: Eleve | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Eleve n'a pas l'autorisation d'acceder a 'Laboratoire'
+[REEL: 2025-10-15 10:47:07 SIMU: 10:45]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:07 SIMU: 10:45]DEMANDE_ACCES - Heure: 10:45 - Personne: Poule Marie | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:08 SIMU: 11:00]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:08 SIMU: 11:00]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:09 SIMU: 11:15]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:09 SIMU: 11:15]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:10 SIMU: 11:30]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:10 SIMU: 11:30]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:11 SIMU: 11:45]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:11 SIMU: 11:45]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:12 SIMU: 12:00]HEURE DE POINTE - Activite elevee
+[REEL: 2025-10-15 10:47:12 SIMU: 12:00]DEMANDE_ACCES - Heure: 12:00 - Personne: Bois Lila | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:13 SIMU: 12:15]HEURE DE POINTE - Activite elevee
+[REEL: 2025-10-15 10:47:13 SIMU: 12:15]DEMANDE_ACCES - Heure: 12:15 - Personne: Rio Martin | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:14 SIMU: 12:30]HEURE DE POINTE - Activite elevee
+[REEL: 2025-10-15 10:47:14 SIMU: 12:30]DEMANDE_ACCES - Heure: 12:30 - Personne: Bois Lila | Statut: Eleve | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:15 SIMU: 12:45]HEURE DE POINTE - Activite elevee
+[REEL: 2025-10-15 10:47:15 SIMU: 12:45]DEMANDE_ACCES - Heure: 12:45 - Personne: Didio Valerie | Statut: Eleve | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:16 SIMU: 13:00]HEURE DE POINTE - Activite elevee
+[REEL: 2025-10-15 10:47:16 SIMU: 13:00]DEMANDE_ACCES - Heure: 13:00 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:17 SIMU: 13:15]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:17 SIMU: 13:15]DEMANDE_ACCES - Heure: 13:15 - Personne: Didio Valerie | Statut: Eleve | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:18 SIMU: 13:30]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:18 SIMU: 13:30]DEMANDE_ACCES - Heure: 13:30 - Personne: Bois Lila | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:19 SIMU: 13:45]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:19 SIMU: 13:45]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:20 SIMU: 14:00]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:20 SIMU: 14:00]DEMANDE_ACCES - Heure: 14:00 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:21 SIMU: 14:15]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:21 SIMU: 14:15]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:22 SIMU: 14:30]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:22 SIMU: 14:30]DEMANDE_ACCES - Heure: 14:30 - Personne: Rio Martin | Statut: Eleve | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Eleve n'a pas l'autorisation d'acceder a 'Laboratoire'
+[REEL: 2025-10-15 10:47:23 SIMU: 14:45]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:23 SIMU: 14:45]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:24 SIMU: 15:00]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:24 SIMU: 15:00]DEMANDE_ACCES - Heure: 15:00 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:25 SIMU: 15:15]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:25 SIMU: 15:15]DEMANDE_ACCES - Heure: 15:15 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:26 SIMU: 15:30]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:26 SIMU: 15:30]DEMANDE_ACCES - Heure: 15:30 - Personne: Rio Martin | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:27 SIMU: 15:45]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:27 SIMU: 15:45]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:28 SIMU: 16:00]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:28 SIMU: 16:00]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:29 SIMU: 16:15]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:29 SIMU: 16:15]DEMANDE_ACCES - Heure: 16:15 - Personne: Didio Valerie | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:30 SIMU: 16:30]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:30 SIMU: 16:30]DEMANDE_ACCES - Heure: 16:30 - Personne: Rio Martin | Statut: Eleve | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Eleve n'a pas l'autorisation d'acceder a 'Laboratoire'
+[REEL: 2025-10-15 10:47:31 SIMU: 16:45]ACTIVITE NORMALE
+[REEL: 2025-10-15 10:47:31 SIMU: 16:45]DEMANDE_ACCES - Heure: 16:45 - Personne: Bois Lila | Statut: Eleve | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:32 SIMU: 17:00]HEURE DE POINTE - Activite elevee
+[REEL: 2025-10-15 10:47:32 SIMU: 17:00]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:33 SIMU: 17:15]HEURE DE POINTE - Activite elevee
+[REEL: 2025-10-15 10:47:33 SIMU: 17:15]DEMANDE_ACCES - Heure: 17:15 - Personne: Bois Lila | Statut: Eleve | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+[REEL: 2025-10-15 10:47:34 SIMU: 17:30]HEURE DE POINTE - Activite elevee
+[REEL: 2025-10-15 10:47:34 SIMU: 17:30]DEMANDE_ACCES - Heure: 17:30 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:35 SIMU: 17:45]HEURE DE POINTE - Activite elevee
+[REEL: 2025-10-15 10:47:35 SIMU: 17:45]DEMANDE_ACCES - Heure: 17:45 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:36 SIMU: 18:00]HEURE DE POINTE - Activite elevee
+[REEL: 2025-10-15 10:47:36 SIMU: 18:00]DEMANDE_ACCES - Heure: 18:00 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: REFUSE | Raison: Badge inactif ou invalide
+[REEL: 2025-10-15 10:47:37 SIMU: 18:15]ACTIVITE REDUITE
+[REEL: 2025-10-15 10:47:37 SIMU: 18:15]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:38 SIMU: 18:30]ACTIVITE REDUITE
+[REEL: 2025-10-15 10:47:38 SIMU: 18:30]Aucun evenement ce cycle
+[REEL: 2025-10-15 10:47:39 SIMU: 18:45]ACTIVITE REDUITE
+[REEL: 2025-10-15 10:47:39 SIMU: 18:45]DEMANDE_ACCES - Heure: 18:45 - Personne: Fevri Hugo | Statut: Securite | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Badge inactif ou invalide

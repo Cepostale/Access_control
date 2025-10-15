@@ -13,4 +13,15 @@ add_executable(Projet2025 main.cpp
     include/Scheduler.h
     src/Scheduler.cpp
     include/Serveur.h
-    src/Serveur.cpp)
+    src/Serveur.cpp
+    include/Eleve.h
+    src/Eleve.cpp
+    include/Professeur.h
+    src/Professeur.cpp
+    include/Securite.h
+    src/Securite.cpp
+    include/Admin.h
+    src/Admin.cpp
+    include/Chercheur.h
+    src/Chercheur.cpp
+)

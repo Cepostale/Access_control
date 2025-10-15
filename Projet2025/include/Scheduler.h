@@ -46,7 +46,7 @@ public:
     void initialisation(Serveur& serv);
     //Arrete la simulation
     void arreterSimulation();
-    //Creation d'evenement en fonction des heure de la journee de simulation. Moment de pointe et de creux
+    //Creation d'evenement en fonction des heures de la journee de simulation. Moment de pointe et de creux
     void genererEvenementAleatoire();
 
     //Incremente le temps de la simulation toutes les deux secondes
@@ -55,7 +55,6 @@ public:
     string getHeureSimulation() const;
     //True si l'heure de la simulation est entre 7h30 et 19h sinon false
     bool estHeureOuverture() const;
-    //double getHeure() const {return heureSimulation;}
 
     //Utilise la methode du serveur pour ecrire dans les logs
     void ecrireLog(const string& message, bool isSchedulerLog);

@@ -8,16 +8,13 @@
 
 
 int main() {
-
     //Creation du serveur
-    cout << "\nINITIALISATION DU SERVEUR..." << endl;
     Serveur serveurUnique = Serveur("../DescriptionFile.csv", "../LogFile.txt" );
-    //Chargement de la configuration
-    bool reponse = serveurUnique.loadConfiguration();
 
+    //Creation du scheduler
     Scheduler sched = Scheduler(serveurUnique);
+    //Lancement de l'initialisation
     sched.initialisation(serveurUnique);
-
 
     return 0;
 }
