@@ -4,9 +4,9 @@ using namespace std;
 int Badge::compteurIdBadge = 1;
 
 Badge &Badge::operator=(const Badge &b) {
-    this->utilisateur = b.utilisateur;
     this->validite = b.validite;
     //L'id n'est pas modifie on garde celui de base
+    //la reference est unique ne peut pas prendre d'autres valeur
     return *this;
 }
 

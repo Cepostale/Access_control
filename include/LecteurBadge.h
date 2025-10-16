@@ -23,19 +23,22 @@ public:
   //Operateur affectation
   LecteurBadge& operator=(const LecteurBadge &l);
   //Destructeur
-  ~LecteurBadge(){};
+  virtual ~LecteurBadge(){};
 
 
   //Constructeur le plus utilise, tout est renseigne
   LecteurBadge(const string& loc, const string& typeP,Serveur& serveur): idLecteur(compteurId++), serv(serveur), typePorte(typeP), localisation(loc){};
 
   //Permet de savoir le type de porte pour le mettre dans le fichier log
-  string getTypePorte()const {return typePorte;};
+  virtual string getTypePorte()const = 0;
 
+  //Affiche une ouverture de porte
   void openPorte();
 
+  //Demande l'autorisation d'ouvrir la porte au serveur
   bool askAutorisation( Badge& b, const string& heureSimulation);
 
+  //Permet de savoir la localisation du LecteurBadge
   string getLocalisation()const{return localisation;};
 };
 

@@ -20,9 +20,9 @@ public:
     //Operateur affectation
     Badge& operator=(const Badge &b);
     //Destructeur
-    ~Badge() {};
+    virtual ~Badge() {};
 
-    //Constructeur, validite non renseigner donc badge desactive
+    //Constructeur, validite non renseigne donc badge desactive
     Badge(Personne& utilisateur):idBadge(compteurIdBadge++),utilisateur(utilisateur), validite(false) {};
     //Constructeur le plus utilise, tout est renseigne
     Badge(Personne& utilisateur, bool validite):idBadge(compteurIdBadge++),utilisateur(utilisateur), validite(validite) {};
@@ -38,6 +38,8 @@ public:
 
     //Renvoie la personne proprietaire du badge
     Personne& getUtilisateur() const;
+
+    virtual string getStatutUtilisateur() const = 0;
 };
 
 

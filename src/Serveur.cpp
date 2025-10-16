@@ -17,7 +17,8 @@ Serveur& Serveur::operator=(const Serveur &s) {
 }
 
 ResultatVerification Serveur::verifierTotalAcces(const Badge& badge, const LecteurBadge& lecteur) {
-    string statut = badge.getUtilisateur().getStatut();
+    //Recupere tous les statuts
+    vector<string> statuts = badge.getUtilisateur().getStatuts();
     string batiment = lecteur.getTypePorte();
 
     //Verifie si le badge est actif
@@ -25,41 +26,62 @@ ResultatVerification Serveur::verifierTotalAcces(const Badge& badge, const Lecte
         return {false, "Badge inactif ou invalide"};
     }
 
-    //Verifie si le statut existe
-    if (droitsAcces.find(statut) == droitsAcces.end()) {
-        return {false, "Statut '" + statut + "' non reconnu dans le systeme"};
+    //Verifie si l'utilisateur a au moins un statut
+    if (statuts.empty()) {
+        return {false, "Pas de statuts reconnus"};
     }
 
-    //Verifie si le batiment est configure pour ce statut
-    if (droitsAcces[statut].find(batiment) == droitsAcces[statut].end()) {
-        return {false, "Acces a '" + batiment + "' non configure pour " + statut};
+    //Parcourt tous les statuts de la personne
+    for (const string& statut : statuts) {
+        //Verifie si le statut existe
+        if (droitsAcces.find(statut) != droitsAcces.end()) {
+            //Verifie si le batiment est configure pour ce statut
+            if (droitsAcces[statut].find(batiment) != droitsAcces[statut].end()) {
+                //Verifie les droits
+                if (droitsAcces[statut][batiment]) {
+                    //Si un seul statut autorise l'acces, c'est bon
+                    return {true, "Acces conforme aux regles de securite"};
+                }
+            }
+        }
     }
 
-    //Verifie les droits
-    if (!droitsAcces[statut][batiment]) {
-        return {false, statut + " n'a pas l'autorisation d'acceder a '" + batiment + "'"};
+    //Si aucun statut autorise l'acces, expliquer la raison
+    string raison = "Aucune des statuts (";
+    for (int i = 0; i < statuts.size(); ++i) {
+        raison += statuts[i];
+        if (i != statuts.size() - 1) raison += ", ";
     }
+    raison += ") ne permet pas l'acces a '" + batiment + "'";
 
-    //Si tout est bon l'acces est autorise
-    return {true, "Acces conforme aux regles de securite"};
+    return {false, raison};
 }
 
 
 bool Serveur:: askAcces( Badge& badge, LecteurBadge& lecteur, const string& heureSimulation){
     //Recupere les donnes du badge, personne, lecteurbadge
     const string nomPersonne = badge.getUtilisateur().getNomComplet();
-    const string statutPersonne = badge.getUtilisateur().getStatut();
+    const vector<string> statutPersonne = badge.getUtilisateur().getStatuts();
     const string localisationPorte = lecteur.getLocalisation();
     const string typePorte = lecteur.getTypePorte();
 
     //Verifie les droits
     ResultatVerification resultat = verifierTotalAcces(badge, lecteur);
 
+    //Convertit les statuts en string, pour les logs
+    string statutStr;
+    for (int i; i < statutPersonne.size(); ++i) {
+        statutStr += statutPersonne[i];
+        if (i < statutPersonne.size() - 1) {
+            statutStr += ", ";
+        }
+    }
+
     //Genere un message de log d'une demande d'acces
     stringstream messageLog;
     messageLog << "DEMANDE_ACCES - Heure: " << heureSimulation
                << " - Personne: " << nomPersonne
-               << " | Statut: " << statutPersonne
+               << " | Statut: " << statutStr
                << " | Lecteur: " << typePorte
                << " | Localisation: " << localisationPorte
                << " | Resulat: " << (resultat.accesAutorisation ? "AUTORISE" : "REFUSE");
@@ -76,7 +98,7 @@ bool Serveur:: askAcces( Badge& badge, LecteurBadge& lecteur, const string& heur
     cout << "\n=== DEMANDE D'ACCES ===" << endl;
     cout << "Heure: " << heureSimulation << endl;
     cout << "Personne: " << nomPersonne << endl;
-    cout << "Statut: " << statutPersonne << endl;
+    cout << "Statut: " << statutStr << endl;
     cout << "Lecteur: " << typePorte << " - " << localisationPorte << endl;
 
     if (resultat.accesAutorisation) {

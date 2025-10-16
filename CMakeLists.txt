@@ -14,14 +14,8 @@ add_executable(Projet2025 main.cpp
     src/Scheduler.cpp
     include/Serveur.h
     src/Serveur.cpp
-    include/Eleve.h
-    src/Eleve.cpp
-    include/Professeur.h
-    src/Professeur.cpp
-    include/Securite.h
-    src/Securite.cpp
-    include/Admin.h
-    src/Admin.cpp
-    include/Chercheur.h
-    src/Chercheur.cpp
+    include/HeritageBadge.h
+    include/HeritagePersonne.h
+    src/HeritageBadge.cpp
+        include/HeritageLecteur.h
 )

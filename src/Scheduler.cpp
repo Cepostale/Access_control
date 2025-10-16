@@ -1,6 +1,7 @@
 #include "../include/Scheduler.h"
-
-#include "../include/Scheduler.h"
+#include "../include/HeritagePersonne.h"
+#include "../include/HeritageBadge.h"
+#include "../include/HeritageLecteur.h"
 #include <iostream>
 #include <random>
 #include <algorithm>
@@ -36,31 +37,38 @@ void Scheduler::initialisation(Serveur& serv) {
 
     //2. Creation des personnes
     cout << "\nCREATION DES PERSONNES..." << endl;
-    Personne lila = Personne("Bois", "Lila", "Eleve");
-    Personne hugo = Personne("Fevri", "Hugo", "Securite");
-    Personne martin = Personne("Rio", "Martin", "Eleve");
-    Personne marie = Personne("Poule", "Marie", "Eleve");
-    Personne valerie = Personne("Didio", "Valerie", "Eleve");
+    Eleve lila = Eleve("Bois", "Lila");
+    Eleve pierre = Eleve("Pierre", "Pierre");
+    pierre.ajouterStatut("Professeur");
+    Securite hugo = Securite("Fevri", "Hugo");
+    Eleve martin = Eleve("Rio", "Martin");
+    Eleve marie = Eleve("Poule", "Marie");
+    Eleve valerie = Eleve("Didio", "Valerie");
+    Professeur marc = Professeur("Blanc", "Marc");
+    marc.ajouterStatut("Chercheur");
 
-    cout << "5 personnes creees" << endl;
+    cout << "7 personnes creees" << endl;
 
     //3. Creation des badges
     // Activation de certains badges (simulation de badges valides/invalides)
     cout << "\nCREATION DES BADGES..." << endl;
-    Badge lilaBadge = Badge(lila, true);
-    Badge hugoBadge = Badge(hugo);
-    Badge martinBadge = Badge(martin, true);
-    Badge marieBadge = Badge(marie, true);
-    Badge valerieBadge = Badge(valerie, true);
+    TypedBadge<Eleve, StatutTypes::Eleve> lilaBadge = TypedBadge<Eleve, StatutTypes::Eleve>(lila, true);
+    TypedBadge<Eleve, StatutTypes::Eleve> pierreBadge = TypedBadge<Eleve, StatutTypes::Eleve>(pierre, true);
+    TypedBadge<Securite, StatutTypes::Securite> hugoBadge = TypedBadge<Securite, StatutTypes::Securite>(hugo,true);
+    TypedBadge<Eleve, StatutTypes::Eleve> martinBadge = TypedBadge<Eleve, StatutTypes::Eleve>(martin);
+    TypedBadge<Eleve, StatutTypes::Eleve> marieBadge = TypedBadge<Eleve, StatutTypes::Eleve>(marie, true);
+    TypedBadge<Eleve, StatutTypes::Eleve> valerieBadge = TypedBadge<Eleve, StatutTypes::Eleve>(valerie, true);
+    TypedBadge<Professeur, StatutTypes::Professeur> marcBadge = TypedBadge<Professeur, StatutTypes::Professeur>(marc, true);
 
-    cout << "5 badges crees (1 inactif)" << endl;
+    cout << "7 badges crees (1 inactif)" << endl;
 
     //4. Creation des lecteurs
     cout << "\nINSTALLATION DES LECTEURS..." << endl;
-    LecteurBadge lecteurBatimentA = LecteurBadge("Batiment A - Porte Principale", "Batiment", serveur);
-    LecteurBadge lecteurSalle1 = LecteurBadge("Batiment A - Salle1", "Classe", serveur);
-    LecteurBadge lecteurBatimentB = LecteurBadge("Batiment B - Porte Principale", "Batiment", serveur);
-    LecteurBadge lecteurLabo = LecteurBadge("Batiment B - Laboratoire", "Laboratoire", serveur);
+    LectBadgeBat lecteurBatimentA = LectBadgeBat("Batiment A - Porte Principale", serveur);
+    LectBadgeClasse lecteurSalle1 = LectBadgeClasse("Batiment A - Salle1", serveur);
+    LectBadgeBat lecteurBatimentB = LectBadgeBat("Batiment B - Porte Principale", serveur);
+    LectBadgeLab lecteurLabo = LectBadgeLab("Batiment B - Laboratoire", serveur);
+    //LectBadgeBibli biliotheque
     cout << "4 lecteurs installes" << endl;
 
     //5. Ajout des badges et des lecteurs au scheduler
@@ -68,10 +76,12 @@ void Scheduler::initialisation(Serveur& serv) {
 
     //Ajout des badges
     ajouterBadge(&lilaBadge);
+    ajouterBadge(&pierreBadge);
     ajouterBadge(&hugoBadge);
     ajouterBadge(&martinBadge);
     ajouterBadge(&marieBadge);
     ajouterBadge(&valerieBadge);
+    ajouterBadge(&marcBadge);
 
     //Ajout des lecteurs
     ajouterLecteurBadge(&lecteurBatimentA);
