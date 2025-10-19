@@ -39,6 +39,8 @@ public:
 
     // Supprimer un statut
     void supprimerStatut(const string& statut);
+
+    friend class Serveur;
 };
 
 #endif //PERSONNE_H

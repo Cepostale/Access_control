@@ -17,8 +17,7 @@ Serveur& Serveur::operator=(const Serveur &s) {
 }
 
 ResultatVerification Serveur::verifierTotalAcces(const Badge& badge, const LecteurBadge& lecteur) {
-    //Recupere tous les statuts
-    vector<string> statuts = badge.getUtilisateur().getStatuts();
+
     string batiment = lecteur.getTypePorte();
 
     //Verifie si le badge est actif
@@ -26,35 +25,61 @@ ResultatVerification Serveur::verifierTotalAcces(const Badge& badge, const Lecte
         return {false, "Badge inactif ou invalide"};
     }
 
-    //Verifie si l'utilisateur a au moins un statut
-    if (statuts.empty()) {
-        return {false, "Pas de statuts reconnus"};
-    }
+    if (tailleStatut(badge.getUtilisateur()) == 1) {
+        //Accede au statut unique de la personne via la methode enfant (HeritageBadge)
+        string statut = badge.getStatutUtilisateur();
 
-    //Parcourt tous les statuts de la personne
-    for (const string& statut : statuts) {
         //Verifie si le statut existe
-        if (droitsAcces.find(statut) != droitsAcces.end()) {
-            //Verifie si le batiment est configure pour ce statut
-            if (droitsAcces[statut].find(batiment) != droitsAcces[statut].end()) {
-                //Verifie les droits
-                if (droitsAcces[statut][batiment]) {
-                    //Si un seul statut autorise l'acces, c'est bon
-                    return {true, "Acces conforme aux regles de securite"};
+        if (droitsAcces.find(statut) == droitsAcces.end()) {
+            return {false, "Statut '" + statut + "' non reconnu dans le systeme"};
+        }
+
+        //Verifie si le batiment est configure pour ce statut
+        if (droitsAcces[statut].find(batiment) == droitsAcces[statut].end()) {
+            return {false, "Acces a '" + batiment + "' non configure pour " + statut};
+        }
+
+        //Verifie les droits
+        if (!droitsAcces[statut][batiment]) {
+            return {false, statut + " n'a pas l'autorisation d'acceder a '" + batiment + "'"};
+        }
+
+        //Si tout est bon l'acces est autorise
+        return {true, "Acces conforme aux regles de securite"};
+
+
+    }if (tailleStatut(badge.getUtilisateur()) == 0) {
+        //Verifie si l'utilisateur a au moins un statut
+            return {false, "Pas de statuts reconnus"};
+    }else{
+        //Recupere tous les statuts
+        vector<string> statuts = badge.getUtilisateur().getStatuts();
+
+        //Parcourt tous les statuts de la personne
+        for (const string& statut : statuts) {
+            //Verifie si le statut existe
+            if (droitsAcces.find(statut) != droitsAcces.end()) {
+                //Verifie si le batiment est configure pour ce statut
+                if (droitsAcces[statut].find(batiment) != droitsAcces[statut].end()) {
+                    //Verifie les droits
+                    if (droitsAcces[statut][batiment]) {
+                        //Si un seul statut autorise l'acces, c'est bon
+                        return {true, "Acces conforme aux regles de securite"};
+                    }
                 }
             }
         }
-    }
 
-    //Si aucun statut autorise l'acces, expliquer la raison
-    string raison = "Aucune des statuts (";
-    for (int i = 0; i < statuts.size(); ++i) {
-        raison += statuts[i];
-        if (i != statuts.size() - 1) raison += ", ";
-    }
-    raison += ") ne permet pas l'acces a '" + batiment + "'";
+        //Si aucun statut autorise l'acces, expliquer la raison
+        string raison = "Aucun des statuts (";
+        for (int i = 0; i < statuts.size(); ++i) {
+            raison += statuts[i];
+            if (i != statuts.size() - 1) raison += ", ";
+        }
+        raison += ") ne permet l'acces a '" + batiment + "'";
 
-    return {false, raison};
+        return {false, raison};
+    }
 }
 
 
@@ -79,8 +104,8 @@ bool Serveur:: askAcces( Badge& badge, LecteurBadge& lecteur, const string& heur
 
     //Genere un message de log d'une demande d'acces
     stringstream messageLog;
-    messageLog << "DEMANDE_ACCES - Heure: " << heureSimulation
-               << " - Personne: " << nomPersonne
+    messageLog << "DEMANDE_ACCES - Heure Simulation: " << heureSimulation
+               << " | Personne: " << nomPersonne
                << " | Statut: " << statutStr
                << " | Lecteur: " << typePorte
                << " | Localisation: " << localisationPorte
@@ -119,12 +144,12 @@ void Serveur::saveLogs(const string& action, const string& heureSimulation) {
 
     //Verifie si le fichier s'ouvre
     if (!fichierLog.is_open()) {
-        cerr << "ERREUR: Impossible d'ouvrir le fichier de logs: " << fichierLogs << endl;
+        cerr << "ERREUR: Impossible d'ouvrir le fichier de logs: " << fichierLogs << "\n" << endl;
         return;
     }
 
     string timestampReel = getTimestampReel();
-    fichierLog << "[REEL: " << timestampReel << " SIMU: " << heureSimulation <<"]" << action << endl;
+    fichierLog << "\n[REEL: " << timestampReel << "]" << action << endl;
 
     //Fermeture du fichier log
     fichierLog.close();

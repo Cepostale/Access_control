@@ -17,24 +17,22 @@ class Scheduler {
 private:
     vector<LecteurBadge*> lecteurs;
     vector<Badge*> badges;
-    Serveur& serveur;
+    Serveur serveur;
+
     int intervalleSimulation; //millisecondes
     bool simulationEnCours;
     double heureSimulation; //heure fictive pour une journee (0-23) en decimal (7.5=7h30)
     double heureDebut; // 7.5 dans notre simulation
     double heureFin; //19.0 dans notre simulation
 public:
-    //Constructeur par defaut impossible car serveur doit être initialisé
-    Scheduler() = delete ;
+    //Constructeur par defaut, fixation du debut de la journee a 7h30, fin 19h, temps entre chaque cycle 1s, un cycle = 15min dans la simulation.
+    Scheduler():intervalleSimulation(1000), simulationEnCours(false), heureSimulation(7.5), heureDebut(7.5), heureFin(19.0), serveur(){} ;
     //Constructeur par recopie
     Scheduler(const Scheduler& sche): serveur(sche.serveur), lecteurs(sche.lecteurs), badges(sche.badges), intervalleSimulation(sche.intervalleSimulation), simulationEnCours(sche.simulationEnCours), heureSimulation(sche.heureSimulation), heureDebut(sche.heureDebut), heureFin(sche.heureFin) {};
     //Operateur affectation
     Scheduler& operator=(const Scheduler& sche);
     //Fin de la simulation
     ~Scheduler();
-
-    //Fixation du debut de la journee a 7h30, fin 19h, temps entre chaque cycle 1s, un cycle = 15min dans la simulation.
-    Scheduler(Serveur& serv, double debut = 7.5, double fin = 19.0, int intervalle = 1000);
 
     //Ajoute les lecteurs crees dans le vecteur lecteurs
     void ajouterLecteurBadge(LecteurBadge* lecteur);
@@ -43,7 +41,7 @@ public:
     //Simule une journee dans l'enceinte du campus
     void simulation();
     //Initialise la simulation
-    void initialisation(Serveur& serv);
+    void initialisation();
     //Arrete la simulation
     void arreterSimulation();
     //Creation d'evenement en fonction des heures de la journee de simulation. Moment de pointe et de creux

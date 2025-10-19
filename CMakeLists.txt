@@ -17,5 +17,5 @@ add_executable(Projet2025 main.cpp
     include/HeritageBadge.h
     include/HeritagePersonne.h
     src/HeritageBadge.cpp
-        include/HeritageLecteur.h
+    include/HeritageLecteur.h
 )

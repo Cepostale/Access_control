@@ -15,19 +15,19 @@ namespace StatutTypes {
 
 //Template pour creer des badges a des personnes specifiques
 template<typename UserType, const char* StatutName>
-class TypedBadge : public Badge {
+class TypeBadge : public Badge {
 public:
 
     //Constructeur a partir d'un Badge existant
-    TypedBadge(const Badge& b) : Badge(b) {}
+    TypeBadge(const Badge& b) : Badge(b) {}
 
     //Constructeur a partir d'un utilisateur specifique
-    TypedBadge(UserType& utilisateur) : Badge(utilisateur) {}
+    TypeBadge(UserType& utilisateur) : Badge(utilisateur) {}
 
     //Constructeur complet
-    TypedBadge(UserType& utilisateur, bool validite) : Badge(utilisateur, validite) {}
+    TypeBadge(UserType& utilisateur, bool validite) : Badge(utilisateur, validite) {}
 
-    //Renvoie le statut specifique
+    //Renvoie le statut principal de l'utilisateur
     string getStatutUtilisateur() const override {
         return StatutName;
     }

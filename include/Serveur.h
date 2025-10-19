@@ -2,7 +2,6 @@
 #define SERVEUR_H
 
 #include "Badge.h"
-#include <iostream>
 #include <string>
 #include <map>          // Maps (dictionnaires)
 
@@ -31,7 +30,7 @@ private:
     string getTimestampReel();
 public:
     //Constructeur par defaut
-    Serveur() = delete;//Interdiction d'instancier un serveur sans les fichiers
+    Serveur(): fichierDescription(""), fichierLogs("") {};
     //Constructeur par recopie
     Serveur(const Serveur &s): fichierDescription(s.fichierDescription), fichierLogs(s.fichierLogs), droitsAcces(s.droitsAcces) {};
     //Operateur affectation
@@ -46,7 +45,10 @@ public:
 
     bool loadConfiguration();
 
-    void saveLogs(const string& action, const string& heureSimulation = "");;
+    void saveLogs(const string& action, const string& heureSimulation = "");
+
+    //Getter de la taille des statuts d'une personne, permet d'apprendre a utiliser l'amitie
+    int tailleStatut(const Personne& pers) {return pers.statuts.size();};
 };
 
 

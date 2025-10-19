@@ -20,56 +20,106 @@ Scheduler& Scheduler::operator=(const Scheduler& sche) {
     return *this;
 }
 
-Scheduler :: Scheduler(Serveur& serv, double debut, double fin, int intervalle) : serveur(serv), intervalleSimulation(intervalle), simulationEnCours(false), heureSimulation(debut), heureDebut(debut), heureFin(fin) {
-    cout << "Scheduler (ordonnanceur) initialise: " << getHeureSimulation() << " a " << fin << "h (" << (fin - debut)*60 << " minutes)" << endl;
-}
-
 Scheduler::~Scheduler() {
     arreterSimulation();
 }
 
-void Scheduler::initialisation(Serveur& serv) {
+void Scheduler::initialisation() {
     cout << "DEMARRAGE DU SYSTEME DE SECURITE" << endl;
     cout << "===================================" << endl;
 
-    //1. Chargement de la configuration
-    bool reponse = serv.loadConfiguration();
+    //1. Creation du serveur
+    serveur = Serveur("../DescriptionFile.csv", "../LogFile.log" );
+    //Chargement de la configuration
+    serveur.loadConfiguration();
 
     //2. Creation des personnes
     cout << "\nCREATION DES PERSONNES..." << endl;
+    
+    //Eleve
     Eleve lila = Eleve("Bois", "Lila");
-    Eleve pierre = Eleve("Pierre", "Pierre");
+    Eleve pierre = Eleve("Caillou", "Pierre");
     pierre.ajouterStatut("Professeur");
-    Securite hugo = Securite("Fevri", "Hugo");
     Eleve martin = Eleve("Rio", "Martin");
     Eleve marie = Eleve("Poule", "Marie");
     Eleve valerie = Eleve("Didio", "Valerie");
+
+    //Securite
+    Securite hugo = Securite("Fevri", "Hugo");
+    Securite flavie = Securite("Tichon", "Flavie");
+
+    //Professeur
     Professeur marc = Professeur("Blanc", "Marc");
     marc.ajouterStatut("Chercheur");
+    Professeur lison = Professeur("Porte", "Lison");
+    Professeur alexis = Professeur("Henri", "Alexis");
 
-    cout << "7 personnes creees" << endl;
+    //Administration
+    Admin jean = Admin("Jean", "Jean");
+    Admin sylvie = Admin("Petit", "Sylvie");
+
+    cout << "12 personnes creees" << endl;
 
     //3. Creation des badges
     // Activation de certains badges (simulation de badges valides/invalides)
     cout << "\nCREATION DES BADGES..." << endl;
-    TypedBadge<Eleve, StatutTypes::Eleve> lilaBadge = TypedBadge<Eleve, StatutTypes::Eleve>(lila, true);
-    TypedBadge<Eleve, StatutTypes::Eleve> pierreBadge = TypedBadge<Eleve, StatutTypes::Eleve>(pierre, true);
-    TypedBadge<Securite, StatutTypes::Securite> hugoBadge = TypedBadge<Securite, StatutTypes::Securite>(hugo,true);
-    TypedBadge<Eleve, StatutTypes::Eleve> martinBadge = TypedBadge<Eleve, StatutTypes::Eleve>(martin);
-    TypedBadge<Eleve, StatutTypes::Eleve> marieBadge = TypedBadge<Eleve, StatutTypes::Eleve>(marie, true);
-    TypedBadge<Eleve, StatutTypes::Eleve> valerieBadge = TypedBadge<Eleve, StatutTypes::Eleve>(valerie, true);
-    TypedBadge<Professeur, StatutTypes::Professeur> marcBadge = TypedBadge<Professeur, StatutTypes::Professeur>(marc, true);
+    //Badge Eleve
+    TypeBadge<Eleve, StatutTypes::Eleve> lilaBadge = TypeBadge<Eleve, StatutTypes::Eleve>(lila, true);
+    TypeBadge<Eleve, StatutTypes::Eleve> pierreBadge = TypeBadge<Eleve, StatutTypes::Eleve>(pierre, true);
+    TypeBadge<Eleve, StatutTypes::Eleve> martinBadge = TypeBadge<Eleve, StatutTypes::Eleve>(martin); //Invalide
+    TypeBadge<Eleve, StatutTypes::Eleve> marieBadge = TypeBadge<Eleve, StatutTypes::Eleve>(marie, true);
+    TypeBadge<Eleve, StatutTypes::Eleve> valerieBadge = TypeBadge<Eleve, StatutTypes::Eleve>(valerie, true);
 
-    cout << "7 badges crees (1 inactif)" << endl;
+    //Badge Securite
+    TypeBadge<Securite, StatutTypes::Securite> hugoBadge = TypeBadge<Securite, StatutTypes::Securite>(hugo,true);
+    TypeBadge<Securite, StatutTypes::Securite> flavieBadge = TypeBadge<Securite, StatutTypes::Securite>(flavie,true);
+    
+    //Badge Professeur
+    TypeBadge<Professeur, StatutTypes::Professeur> marcBadge = TypeBadge<Professeur, StatutTypes::Professeur>(marc, true);
+    TypeBadge<Professeur, StatutTypes::Professeur> lisonBadge = TypeBadge<Professeur, StatutTypes::Professeur>(lison, true);
+    TypeBadge<Professeur, StatutTypes::Professeur> alexisBadge = TypeBadge<Professeur, StatutTypes::Professeur>(alexis, true);
+
+    //Administration
+    TypeBadge<Admin, StatutTypes::Administratif> jeanBadge = TypeBadge<Admin, StatutTypes::Administratif>(jean, true);
+    TypeBadge<Admin, StatutTypes::Administratif> sylvieBadge = TypeBadge<Admin, StatutTypes::Administratif>(sylvie, true);
+    
+    cout << "12 badges crees (1 inactif)" << endl;
 
     //4. Creation des lecteurs
     cout << "\nINSTALLATION DES LECTEURS..." << endl;
+    //Batiment
     LectBadgeBat lecteurBatimentA = LectBadgeBat("Batiment A - Porte Principale", serveur);
-    LectBadgeClasse lecteurSalle1 = LectBadgeClasse("Batiment A - Salle1", serveur);
     LectBadgeBat lecteurBatimentB = LectBadgeBat("Batiment B - Porte Principale", serveur);
+    LectBadgeBat lecteurBatimentC = LectBadgeBat ("Batiment C - Porte Principale", serveur);
+
+    //Salle
+    LectBadgeClasse lecteurSalle1 = LectBadgeClasse("Batiment A - Salle1", serveur);
+    LectBadgeClasse lecteurSalle2 = LectBadgeClasse("Batiment A - Salle2", serveur);
+    LectBadgeClasse lecteurSalle10 = LectBadgeClasse("Batiment A - Salle10", serveur);
+    LectBadgeClasse lecteurSalle23 = LectBadgeClasse("Batiment B - Salle33", serveur);
+    LectBadgeClasse lecteurSalle36 = LectBadgeClasse("Batiment B - Salle36", serveur);
+    LectBadgeClasse lecteurSalle41 = LectBadgeClasse("Batiment C - Salle41", serveur);
+    LectBadgeClasse lecteurSalle58 = LectBadgeClasse("Batiment C - Salle58", serveur);
+
+    //Laboratoire
     LectBadgeLab lecteurLabo = LectBadgeLab("Batiment B - Laboratoire", serveur);
-    //LectBadgeBibli biliotheque
-    cout << "4 lecteurs installes" << endl;
+
+    //Bibliotheque
+    LectBadgeBibli lecteurBibli = LectBadgeBibli("Batiment A - Bibliotheque", serveur);
+
+    //Zone Securisee
+    LectBadgeZoneSecu lecteurSecu = LectBadgeZoneSecu("Batiment B - Zone Securisee", serveur);
+
+    //Cafeteria
+    LectBadgeCafet lecteurCafet = LectBadgeCafet("Batiment C - Cafeteria", serveur);
+
+    //Zone Administrative
+    LectBadgeZoneAdmin lecteurAdmin = LectBadgeZoneAdmin("Batiment A - Zone Administrative", serveur);
+
+    //Salle des Professeurs
+    LectBadgeProf lecteurSalleProf = LectBadgeProf("Batiment A - Salle des Professeurs", serveur);
+
+    cout << "10 lecteurs installes" << endl;
 
     //5. Ajout des badges et des lecteurs au scheduler
     cout << "\nCONNEXION DES COMPOSANTS..." << endl;
@@ -88,6 +138,12 @@ void Scheduler::initialisation(Serveur& serv) {
     ajouterLecteurBadge(&lecteurSalle1);
     ajouterLecteurBadge(&lecteurBatimentB);
     ajouterLecteurBadge(&lecteurLabo);
+    ajouterLecteurBadge(&lecteurBibli);
+    ajouterLecteurBadge(&lecteurSecu);
+    ajouterLecteurBadge(&lecteurBatimentC);
+    ajouterLecteurBadge(&lecteurCafet);
+    ajouterLecteurBadge(&lecteurAdmin);
+    ajouterLecteurBadge(&lecteurSalleProf);
 
     cout <<"Tous les composants connectes" << endl;
 
@@ -122,8 +178,8 @@ void Scheduler::simulation() {
     ecrireLog("Debut de la simulation", true);
     cout << "Periode: " << getHeureSimulation() << " a " << heureFin << "h" << endl;
 
-    //Tant que l'heure affiche ne correspond pas a la fin de la journee de la simulation, on augmente de 15 min (1 cycle)
-    while (simulationEnCours && heureSimulation < heureFin) {
+    //Tant que l'heure affichee ne correspond pas a la fin de la journee de la simulation, on genere un evenement
+    while (simulationEnCours && heureSimulation <= heureFin) {
         cycle++;
 
         //Affiche dans la console le cycle et l'heure equivalente.
@@ -132,11 +188,9 @@ void Scheduler::simulation() {
         //Verifie si c'est l'heure d'ouverture/fermeture
         if (abs(heureSimulation - heureDebut) < 0.01) { //Environ 7h30
             cout << "OUVERTURE DU CAMPUS" << endl;
-            ecrireLog("Ouverture du campus - Debut de la journee", true);
         }
         else if (abs(heureSimulation - heureFin) < 0.01) { //Environ 19h00
             cout << "FERMETURE DU CAMPUS" << endl;
-            ecrireLog("Fermeture du campus - Fin de la journee", true);
         }
 
         //Genere des evenements seulement pendant les heures d'ouverture
@@ -144,7 +198,6 @@ void Scheduler::simulation() {
             genererEvenementAleatoire();
         } else {
             cout << "Campus ferme - Aucun evenement" << endl;
-            ecrireLog("Campus ferme - Aucun evenement", false);
         }
 
         //Attend avant le prochain cycle
@@ -157,12 +210,11 @@ void Scheduler::simulation() {
     //Annonce la fin de la journee de simulation si tout s'est bien passe
     if (simulationEnCours) {
         cout << "\nSIMULATION TERMINEE - Fin de la journee a " << getHeureSimulation() << endl;
-        ecrireLog("Fin de la simulation - Journee terminee", true);
     }
 }
 
 bool Scheduler::estHeureOuverture() const {
-    return (heureSimulation >= heureDebut && heureSimulation <= heureFin);
+    return (heureSimulation >= heureDebut && heureSimulation < heureFin);
 }
 
 void Scheduler::genererEvenementAleatoire() {
@@ -178,22 +230,18 @@ void Scheduler::genererEvenementAleatoire() {
     if (heureSimulation >= 8.0 && heureSimulation <= 9.0) { //Matin entre 8h / 9h: heure de pointe forte
         probabilite = 0.9; //90% : pic d'activite
         cout << "HEURE DE POINTE FORTE - Pic d'activite" << endl;
-        ecrireLog("HEURE DE POINTE FORTE  - Pic d'activite", false);
     }
     else if ((heureSimulation >= 12.0 && heureSimulation <= 13.0) || //Midi entre 12h / 13h : heure de pointe moderee
         (heureSimulation >= 17.0 && heureSimulation <= 18.0)) { //Soir entre 17h / 18h : heure de pointe moderee
         probabilite = 0.8; //80% : activite elevee
         cout << "HEURE DE POINTE - Activite elevee" << endl;
-        ecrireLog("HEURE DE POINTE - Activite elevee", false);
         }
     else if (heureSimulation > 18.0 && heureSimulation <= 19.0) {
         probabilite = 0.3; //30%, tres faible entree
         cout << "ACTIVITE REDUITE" << endl;
-        ecrireLog("ACTIVITE REDUITE", false);
     }
     else { //Activite normale (7h30-8h / 9h-12h / 13h-17h), probabilite deja a 70%
         cout << "ACTIVITE NORMALE" << endl;
-        ecrireLog("ACTIVITE NORMALE", false);
     }
 
     //Permet de generer un nombre aleatoire
@@ -203,7 +251,6 @@ void Scheduler::genererEvenementAleatoire() {
 
     if (disChance(gen) > probabilite) { //Si le chiffre genere est superieur a la probabilite d'evenement, rien ne se passe.
         cout << "Aucun evenement ce cycle" << endl;
-        ecrireLog("Aucun evenement ce cycle", false);
         return;
     }
 
@@ -227,7 +274,7 @@ void Scheduler::incrementerHeure() {
     heureSimulation += 0.25; //15 minutes par cycle
 
     //Verifie si on a depasse l'heure de fin
-    if (heureSimulation >= heureFin) {
+    if (heureSimulation > heureFin) {
         simulationEnCours = false;
     }
 }

@@ -8,13 +8,12 @@
 
 
 int main() {
-    //Creation du serveur
-    Serveur serveurUnique = Serveur("../DescriptionFile.csv", "../LogFile.txt" );
 
     //Creation du scheduler
-    Scheduler sched = Scheduler(serveurUnique);
+    Scheduler sched = Scheduler();
+
     //Lancement de l'initialisation
-    sched.initialisation(serveurUnique);
+    sched.initialisation();
 
     return 0;
 }
