@@ -13,16 +13,24 @@
 
 using namespace std;
 
+//Classe Scheduler, initie et joue la simulation complete d'une journee d'ecole
 class Scheduler {
 private:
+    //Vecteur des lecteurs de badges crees
     vector<LecteurBadge*> lecteurs;
+    //VEcteurs des badges crees
     vector<Badge*> badges;
+    //Cree le serveur
     Serveur serveur;
 
+    //Intervalle entre chaque cycle
     int intervalleSimulation; //millisecondes
+    //True si la simulation est en cours, false sinon
     bool simulationEnCours;
     double heureSimulation; //heure fictive pour une journee (0-23) en decimal (7.5=7h30)
+    //Heure du debut de la simulation
     double heureDebut; // 7.5 dans notre simulation
+    //Heure de fin de la simulation
     double heureFin; //19.0 dans notre simulation
 public:
     //Constructeur par defaut, fixation du debut de la journee a 7h30, fin 19h, temps entre chaque cycle 1s, un cycle = 15min dans la simulation.

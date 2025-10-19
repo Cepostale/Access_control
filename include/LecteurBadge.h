@@ -7,13 +7,16 @@ using namespace std;
 
 class Serveur;
 
-//Classe LecteurBadge est une classe mere pour des portes de batiments ou portes de salles de travail.
+//Classe LecteurBadge est une classe mere (abstraite), gere la localisation et le type de porte de chaque lecteur
 class LecteurBadge {
 private:
+  //Compteur des id de chaque lecteur, initialise a 1
   static int compteurId;
+  //Id de chaque lecteur
   int idLecteur;
   string localisation; //Descrption du lieu "Batiment - salle/lieu"
   string typePorte; //Batiment,Classe,Laboratoire,ZoneSecurisee,ZoneAdministrative,Bibliothèque,Cafeteria
+  //Reference du Serveur
   Serveur& serv;
 public:
   //Constructeur par defaut

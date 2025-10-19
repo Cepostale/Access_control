@@ -18,6 +18,7 @@ Serveur& Serveur::operator=(const Serveur &s) {
 
 ResultatVerification Serveur::verifierTotalAcces(const Badge& badge, const LecteurBadge& lecteur) {
 
+    //Renvoie le type de porte, initialise dans HeritageLecteur
     string batiment = lecteur.getTypePorte();
 
     //Verifie si le badge est actif
@@ -25,6 +26,7 @@ ResultatVerification Serveur::verifierTotalAcces(const Badge& badge, const Lecte
         return {false, "Badge inactif ou invalide"};
     }
 
+    //Si la personne ne possede qu'un seul statut on recherche les droits en fonction
     if (tailleStatut(badge.getUtilisateur()) == 1) {
         //Accede au statut unique de la personne via la methode enfant (HeritageBadge)
         string statut = badge.getStatutUtilisateur();
@@ -48,10 +50,11 @@ ResultatVerification Serveur::verifierTotalAcces(const Badge& badge, const Lecte
         return {true, "Acces conforme aux regles de securite"};
 
 
-    }if (tailleStatut(badge.getUtilisateur()) == 0) {
-        //Verifie si l'utilisateur a au moins un statut
+    }
+    else if (tailleStatut(badge.getUtilisateur()) == 0) { //Si la personne ne possede pas de statut, envoie un message d'erreur
             return {false, "Pas de statuts reconnus"};
-    }else{
+    }
+    else{ //Sinon, si la personne a au moins 2 statuts on regarde les droits pour chacun d'eux jusqu'a trouve un droit valide pour un statut
         //Recupere tous les statuts
         vector<string> statuts = badge.getUtilisateur().getStatuts();
 
@@ -82,9 +85,8 @@ ResultatVerification Serveur::verifierTotalAcces(const Badge& badge, const Lecte
     }
 }
 
-
 bool Serveur:: askAcces( Badge& badge, LecteurBadge& lecteur, const string& heureSimulation){
-    //Recupere les donnes du badge, personne, lecteurbadge
+    //Recupere les donnes du badge, personne, statuts, lecteurbadge
     const string nomPersonne = badge.getUtilisateur().getNomComplet();
     const vector<string> statutPersonne = badge.getUtilisateur().getStatuts();
     const string localisationPorte = lecteur.getLocalisation();
@@ -148,6 +150,7 @@ void Serveur::saveLogs(const string& action, const string& heureSimulation) {
         return;
     }
 
+    //Affiche l'heure actuel dans le fichier de log, suivi du message
     string timestampReel = getTimestampReel();
     fichierLog << "\n[REEL: " << timestampReel << "]" << action << endl;
 
@@ -201,21 +204,22 @@ bool Serveur:: loadConfiguration(){
         istringstream ss(ligne);
         string cellule;
 
-        //Lit l'etiquette "Statut" (premiere colonne)
+        //Si la lecture de la premiere ligne jusqu'a ',' (i.e Statut) echoue, on envoie un message d'erreur
         if (!getline(ss, cellule, ',')) {
             throw runtime_error("Format den-tete invalide - colonne Statut manquante");
         }
 
-        //Test 4: Verifie format en-tête
+        //Test 4: Verifie si l'en-tête est egale a "Statut"
         if (cellule != "Statut") {
             cerr << "ATTENTION: La premiere colonne devrait s'appeler Statut, mais contient: '"
                  << cellule << "'" << endl;
-            // On continue quand même, ce n'est pas fatal
+            // On continue quand même
         }
 
         //Lit noms des batiments
         int nbBatiments = 0;
         while (getline(ss, cellule, ',')) {
+            //Si la cellule lue est vide, on envoie un message d'alerte puis continue
             if (cellule.empty()) {
                 cerr << "ATTENTION: Nom de batiment vide detecte a la position "
                      << (nbBatiments + 1) << endl;
@@ -236,6 +240,7 @@ bool Serveur:: loadConfiguration(){
         int ligneNum = 1; // Compteur de lignes pour les messages d'erreur
         int statsLus = 0;
 
+        //Tant que chaque ligne n'est pas vide
         while (getline(fichier, ligne)) {
             ligneNum++;
 
@@ -248,7 +253,7 @@ bool Serveur:: loadConfiguration(){
             istringstream ssLigne(ligne);
             string statut;
 
-            //Lit le statut
+            //S'il manque un statut, on envoie un message d'alerte puis continue
             if (!getline(ssLigne, statut, ',')) {
                 cerr << "ERREUR: Statut manquant à la ligne " << ligneNum << " - ligne ignoree" << endl;
                 continue;

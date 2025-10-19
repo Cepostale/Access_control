@@ -10,6 +10,7 @@ Personne& Personne::operator=(const Personne &p) {
 }
 
 bool Personne::aStatut(const string& statut) const {
+    //Regarde parmi tous les statuts de la personne si elle possede le statut demande
     for (const string& s : statuts) {
         if (s == statut) return true;
     }
@@ -17,7 +18,9 @@ bool Personne::aStatut(const string& statut) const {
 }
 
 void Personne::ajouterStatut(string statut) {
+    //Verifie si le statut que l'on ajoute n'est pas ''
     if (!statut.empty()) {
+        //Verifie si le statut n'est pas deja affecte a la personne
         if (!aStatut(statut)) {
             this->statuts.push_back(statut);
         }

@@ -5,12 +5,15 @@
 #include <vector>
 using namespace std;
 
-//Classe Personne definit les personnes possedant des badges
+//Classe Personne, abstraite, definit les personnes possedant des badges
 class Personne {
 private:
+    //Nom de la personne
     string nom;
+    //Prenom de la personne
     string prenom;
-    vector<string> statuts; // Vector pour stocker plusieurs statuts : Enseignant, Eleve, Admnistritatif, Securite, Chercheur
+    // Vecteur pour stocker plusieurs statuts : Enseignant, Eleve, Admnistritatif, Securite, Chercheur
+    vector<string> statuts;
 public:
     //Constructeur par defaut
     Personne(): nom(""), prenom("") {}
@@ -25,10 +28,10 @@ public:
     Personne(const string &nom, const string &prenom, const string& statut): nom(nom), prenom(prenom) {statuts.push_back(statut);}
 
     //Getters
-    string getNomComplet(){return nom + " " + prenom;}//Getter nom
-    //Recupere tous les statuts
+    string getNomComplet(){return nom + " " + prenom;}//Getter nom et prenom de la personne
+    //Recupere tous les statuts de la personne
     vector<string> getStatuts()const {return statuts;}
-    //Recupere le statut principal, virtuelle
+    //Recupere le statut principal de la personne, virtuelle
     virtual string getStatutPrincipal() const = 0;
 
     //Verifie si la personne a un statut spécifique
@@ -40,6 +43,7 @@ public:
     // Supprimer un statut
     void supprimerStatut(const string& statut);
 
+    //Ajout de la classe Serveur en ami
     friend class Serveur;
 };
 

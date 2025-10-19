@@ -5,12 +5,16 @@
 #include "Personne.h"
 using namespace std;
 
-//Classe Badge repertorie tous les badges des personnes par id et nom complet d'utilisaeur + vision de la validite du badge
+//Classe Badge, abstraite, repertorie tous les badges des personnes par id et nom complet d'utilisaeur + vision de la validite du badge
 class Badge {
 private:
+    //Compteur pour les id de badge, initialise a 1
     static int compteurIdBadge;
+    //id des badges des personnes, unique
     int idBadge;
+    //Personne possedant le badge
     Personne& utilisateur;
+    //True si le badge est actif, false sinon
     bool validite;
 public:
     //Constructeur par defaut
@@ -39,9 +43,8 @@ public:
     //Renvoie la personne proprietaire du badge
     Personne& getUtilisateur() const;
 
+    //Renvoie le statut principal de la personne possedant le badge
     virtual string getStatutUtilisateur() const = 0;
 };
-
-
 
 #endif //BADGE_H

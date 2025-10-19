@@ -56,7 +56,7 @@ public:
     string getTypePorte() const override { return "ZoneAdministrative"; };
 };
 
-//Classe LectBadgeBibli, correspond à la bibliotheque, heritage public de LecteurBadge
+//Classe LectBadgeBibli, correspond a la bibliotheque, heritage public de LecteurBadge
 class LectBadgeBibli : public LecteurBadge {
 public:
 
@@ -67,7 +67,7 @@ public:
     string getTypePorte() const override { return "Bibliotheque"; };
 };
 
-//Classe LectBadgeCafet, correspond à la cafeteria, heritage public de LecteurBadge
+//Classe LectBadgeCafet, correspond a la cafeteria, heritage public de LecteurBadge
 class LectBadgeCafet : public LecteurBadge {
 public:
 
@@ -78,7 +78,7 @@ public:
     string getTypePorte() const override { return "Cafeteria"; };
 };
 
-//Classe LectBadgeProf, correspond à la salle des professeurs, heritage public de LecteurBadge
+//Classe LectBadgeProf, correspond a la salle des professeurs, heritage public de LecteurBadge
 class LectBadgeProf : public LecteurBadge {
 public:
 

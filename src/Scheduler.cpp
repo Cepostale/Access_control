@@ -50,7 +50,7 @@ void Scheduler::initialisation() {
 
     //Professeur
     Professeur marc = Professeur("Blanc", "Marc");
-    marc.ajouterStatut("Chercheur");
+    marc.ajouterStatut("Chercheur"); //ajoute le statut "Chercheur" a marc
     Professeur lison = Professeur("Porte", "Lison");
     Professeur alexis = Professeur("Henri", "Alexis");
 
@@ -132,6 +132,11 @@ void Scheduler::initialisation() {
     ajouterBadge(&marieBadge);
     ajouterBadge(&valerieBadge);
     ajouterBadge(&marcBadge);
+    ajouterBadge(&hugoBadge);
+    ajouterBadge(&flavieBadge);
+    ajouterBadge(&jeanBadge);
+    ajouterBadge(&sylvieBadge);
+    ajouterBadge(&alexisBadge);
 
     //Ajout des lecteurs
     ajouterLecteurBadge(&lecteurBatimentA);
@@ -161,6 +166,7 @@ void Scheduler::initialisation() {
     cout << "Appuyez sur Entree pour commencer...\n";
     cin.get(); // Pause avant de commencer
 
+    //Lancement de la simulation
     simulation();
 
     //8. Conclusion
@@ -175,7 +181,10 @@ void Scheduler::simulation() {
     int cycle = 0;
 
     cout << "DEBUT DE LA SIMULATION DE LA JOURNEE" << endl;
+
+    //Annonce du debut de la simulation dans les logs pour creer une separation
     ecrireLog("Debut de la simulation", true);
+
     cout << "Periode: " << getHeureSimulation() << " a " << heureFin << "h" << endl;
 
     //Tant que l'heure affichee ne correspond pas a la fin de la journee de la simulation, on genere un evenement
@@ -218,6 +227,7 @@ bool Scheduler::estHeureOuverture() const {
 }
 
 void Scheduler::genererEvenementAleatoire() {
+    //Verifie que les vecteurs de LecteurBadge et Badge ne sont pas vides
     if (badges.empty() || lecteurs.empty()) {
         cout << "ATTENTION Aucun badge ou lecteur disponible!!!!!!" << endl;
         ecrireLog("Aucun badge ou lecteur disponible", true);
@@ -253,19 +263,21 @@ void Scheduler::genererEvenementAleatoire() {
         cout << "Aucun evenement ce cycle" << endl;
         return;
     }
-
-    //Choisit un badge et un lecteur aléatoires
+    //Genere une distribution uniforme d'entiers entre 0 et la taille du vecteur badges - 1
     uniform_int_distribution<> disBadge(0, badges.size() - 1);
     uniform_int_distribution<> disLecteur(0, lecteurs.size() - 1);
 
+    //Choisit un badge et un lecteur aleatoires dans la plage genere ci-dessus
     Badge* badge = badges[disBadge(gen)];
     LecteurBadge* lecteur = lecteurs[disLecteur(gen)];
 
+    //Affichage de l'evenement dans la console
     cout << "EVENEMENT: " << badge->getUtilisateur().getNomComplet() << " presente son badge sur " << lecteur->getLocalisation() << endl;
 
     //Demande l'autorisation via le lecteur
     bool autorise = lecteur->askAutorisation(*badge, getHeureSimulation());
     if (autorise) {
+        //Ouvre la porte si l'acces est autorise
         lecteur->openPorte();
     }
 }
@@ -284,19 +296,21 @@ string Scheduler::getHeureSimulation() const {
     int minutes = static_cast<int>((heureSimulation - heures) * 60); //Recupere la partie decimale de l'heure de la simulation
 
     char buffer[6];
-    snprintf(buffer, sizeof(buffer), "%02d:%02d", heures, minutes); //Ecrit l'heure dans la forme HH:MM
+    snprintf(buffer, sizeof(buffer), "%02d:%02d", heures, minutes); //Ecrit l'heure sous la forme HH:MM dans le buffer
     return string(buffer);
 }
 
 void Scheduler::ecrireLog(const string& message, bool isSchedulerLog = true) {
 
     stringstream logMessage;
-
+    //Ajoute "SCHEDULER - " devant un message venant du scheduler si isSchedulerLog == true
     if (isSchedulerLog) {
         logMessage << "SCHEDULER - " << message;
     } else {
+        //Transmet le message a afficher dans les logs a logMessage
         logMessage << message;
     }
+    //Appel de la fonction du serveur pour generer le message dans le fichier de log avec l'heure de la simulation
     serveur.saveLogs(logMessage.str(), getHeureSimulation());
 }
 
