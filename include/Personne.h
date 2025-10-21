@@ -16,7 +16,7 @@ private:
     vector<string> statuts;
 public:
     //Constructeur par defaut
-    Personne(): nom(""), prenom("") {}
+    Personne()= delete;
     //Constructeur par recopie
     Personne(const Personne &p): nom(p.nom), prenom(p.prenom),statuts(p.statuts) {}
     //Operateur affectation

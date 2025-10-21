@@ -18,7 +18,7 @@ class Scheduler {
 private:
     //Vecteur des lecteurs de badges crees
     vector<LecteurBadge*> lecteurs;
-    //VEcteurs des badges crees
+    //Vecteur des badges crees
     vector<Badge*> badges;
     //Cree le serveur
     Serveur serveur;
