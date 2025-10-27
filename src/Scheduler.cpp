@@ -80,8 +80,8 @@ void Scheduler::initialisation() {
     TypeBadge<Professeur, StatutTypes::Professeur> alexisBadge = TypeBadge<Professeur, StatutTypes::Professeur>(alexis, true);
 
     //Administration
-    TypeBadge<Admin, StatutTypes::Administratif> jeanBadge = TypeBadge<Admin, StatutTypes::Administratif>(jean, true);
-    TypeBadge<Admin, StatutTypes::Administratif> sylvieBadge = TypeBadge<Admin, StatutTypes::Administratif>(sylvie, true);
+    TypeBadge<Admin, StatutTypes::Administration> jeanBadge = TypeBadge<Admin, StatutTypes::Administration>(jean, true);
+    TypeBadge<Admin, StatutTypes::Administration> sylvieBadge = TypeBadge<Admin, StatutTypes::Administration>(sylvie, true);
     
     cout << "12 badges crees (1 inactif)" << endl;
 

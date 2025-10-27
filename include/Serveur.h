@@ -40,7 +40,7 @@ public:
     //Destructeur
     ~Serveur() {};
 
-    //Constructeur, parametre: fichier des acces selon les statuts et le fichier de log a remplir
+    //Constructeur, parametres: fichier des acces selon les statuts et le fichier de log a remplir
     Serveur(const string& fichierDescription, const string& fichierLogs) : fichierDescription(fichierDescription), fichierLogs(fichierLogs) {}
 
     //Renvoie le resultat de la demande d'acces s'un badge sur un lecteur. Rempli la console et le fichier log avec les details de la demande

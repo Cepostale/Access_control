@@ -5,6 +5,6 @@ namespace StatutTypes {
     const char Chercheur[] = "Chercheur";
     const char Eleve[] = "Eleve";
     const char Professeur[] = "Professeur";
-    const char Administratif[] = "Administratif";
+    const char Administration[] = "Administration";
     const char Securite[] = "Securite";
 }

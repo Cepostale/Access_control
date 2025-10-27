@@ -10,6 +10,7 @@
 #include "LecteurBadge.h"
 #include "Badge.h"
 #include "Personne.h"
+#include <sstream>
 
 using namespace std;
 

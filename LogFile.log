@@ -398,3 +398,147 @@
 [REEL: 2025-10-19 18:55:08]DEMANDE_ACCES - Heure Simulation: 17:45 | Personne: Rio Martin | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: REFUSE | Raison: Badge inactif ou invalide
 
 [REEL: 2025-10-19 18:55:09]DEMANDE_ACCES - Heure Simulation: 18:00 | Personne: Poule Marie | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:36:51]SCHEDULER - Debut de la simulation
+
+[REEL: 2025-10-27 21:36:53]DEMANDE_ACCES - Heure Simulation: 08:00 | Personne: Bois Lila | Statut: Eleve | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:36:54]DEMANDE_ACCES - Heure Simulation: 08:15 | Personne: Tichon Flavie | Statut: Securite | Lecteur: SalleProfesseur | Localisation: Batiment A - Salle des Professeurs | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:36:55]DEMANDE_ACCES - Heure Simulation: 08:30 | Personne: Caillou Pierre | Statut: Eleve, Professeur | Lecteur: Cafeteria | Localisation: Batiment C - Cafeteria | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:36:56]DEMANDE_ACCES - Heure Simulation: 08:45 | Personne: Caillou Pierre | Statut: Eleve, Professeur | Lecteur: ZoneAdministrative | Localisation: Batiment A - Zone Administrative | Resulat: REFUSE | Raison: Aucun des statuts (Eleve, Professeur) ne permet l'acces a 'ZoneAdministrative'
+
+[REEL: 2025-10-27 21:36:57]DEMANDE_ACCES - Heure Simulation: 09:00 | Personne: Bois Lila | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:36:58]DEMANDE_ACCES - Heure Simulation: 09:15 | Personne: Didio Valerie | Statut: Eleve | Lecteur: Cafeteria | Localisation: Batiment C - Cafeteria | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:00]DEMANDE_ACCES - Heure Simulation: 09:45 | Personne: Blanc Marc | Statut: Professeur, Chercheur | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:02]DEMANDE_ACCES - Heure Simulation: 10:15 | Personne: Didio Valerie | Statut: Eleve | Lecteur: ZoneAdministrative | Localisation: Batiment A - Zone Administrative | Resulat: REFUSE | Raison: Eleve n'a pas l'autorisation d'acceder a 'ZoneAdministrative'
+
+[REEL: 2025-10-27 21:37:05]DEMANDE_ACCES - Heure Simulation: 11:00 | Personne: Bois Lila | Statut: Eleve | Lecteur: SalleProfesseur | Localisation: Batiment A - Salle des Professeurs | Resulat: REFUSE | Raison: Eleve n'a pas l'autorisation d'acceder a 'SalleProfesseur'
+
+[REEL: 2025-10-27 21:37:06]DEMANDE_ACCES - Heure Simulation: 11:15 | Personne: Blanc Marc | Statut: Professeur, Chercheur | Lecteur: Batiment | Localisation: Batiment C - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:07]DEMANDE_ACCES - Heure Simulation: 11:30 | Personne: Blanc Marc | Statut: Professeur, Chercheur | Lecteur: Bibliotheque | Localisation: Batiment A - Bibliotheque | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:08]DEMANDE_ACCES - Heure Simulation: 11:45 | Personne: Blanc Marc | Statut: Professeur, Chercheur | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:09]DEMANDE_ACCES - Heure Simulation: 12:00 | Personne: Fevri Hugo | Statut: Securite | Lecteur: Batiment | Localisation: Batiment C - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:10]DEMANDE_ACCES - Heure Simulation: 12:15 | Personne: Didio Valerie | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:12]DEMANDE_ACCES - Heure Simulation: 12:45 | Personne: Henri Alexis | Statut: Professeur | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Professeur n'a pas l'autorisation d'acceder a 'Laboratoire'
+
+[REEL: 2025-10-27 21:37:13]DEMANDE_ACCES - Heure Simulation: 13:00 | Personne: Poule Marie | Statut: Eleve | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:14]DEMANDE_ACCES - Heure Simulation: 13:15 | Personne: Blanc Marc | Statut: Professeur, Chercheur | Lecteur: Batiment | Localisation: Batiment C - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:17]DEMANDE_ACCES - Heure Simulation: 14:00 | Personne: Petit Sylvie | Statut: Administration | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: REFUSE | Raison: Statut 'Administratif' non reconnu dans le systeme
+
+[REEL: 2025-10-27 21:37:18]DEMANDE_ACCES - Heure Simulation: 14:15 | Personne: Caillou Pierre | Statut: Eleve, Professeur | Lecteur: ZoneSecurisee | Localisation: Batiment B - Zone Securisee | Resulat: REFUSE | Raison: Aucun des statuts (Eleve, Professeur) ne permet l'acces a 'ZoneSecurisee'
+
+[REEL: 2025-10-27 21:37:19]DEMANDE_ACCES - Heure Simulation: 14:30 | Personne: Fevri Hugo | Statut: Securite | Lecteur: Bibliotheque | Localisation: Batiment A - Bibliotheque | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:20]DEMANDE_ACCES - Heure Simulation: 14:45 | Personne: Blanc Marc | Statut: Professeur, Chercheur | Lecteur: Bibliotheque | Localisation: Batiment A - Bibliotheque | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:21]DEMANDE_ACCES - Heure Simulation: 15:00 | Personne: Petit Sylvie | Statut: Administration | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: REFUSE | Raison: Statut 'Administratif' non reconnu dans le systeme
+
+[REEL: 2025-10-27 21:37:22]DEMANDE_ACCES - Heure Simulation: 15:15 | Personne: Blanc Marc | Statut: Professeur, Chercheur | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:24]DEMANDE_ACCES - Heure Simulation: 15:45 | Personne: Caillou Pierre | Statut: Eleve, Professeur | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:25]DEMANDE_ACCES - Heure Simulation: 16:00 | Personne: Fevri Hugo | Statut: Securite | Lecteur: Cafeteria | Localisation: Batiment C - Cafeteria | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:26]DEMANDE_ACCES - Heure Simulation: 16:15 | Personne: Caillou Pierre | Statut: Eleve, Professeur | Lecteur: Cafeteria | Localisation: Batiment C - Cafeteria | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:27]DEMANDE_ACCES - Heure Simulation: 16:30 | Personne: Petit Sylvie | Statut: Administration | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: REFUSE | Raison: Statut 'Administratif' non reconnu dans le systeme
+
+[REEL: 2025-10-27 21:37:29]DEMANDE_ACCES - Heure Simulation: 17:00 | Personne: Henri Alexis | Statut: Professeur | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Professeur n'a pas l'autorisation d'acceder a 'Laboratoire'
+
+[REEL: 2025-10-27 21:37:30]DEMANDE_ACCES - Heure Simulation: 17:15 | Personne: Petit Sylvie | Statut: Administration | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: REFUSE | Raison: Statut 'Administratif' non reconnu dans le systeme
+
+[REEL: 2025-10-27 21:37:31]DEMANDE_ACCES - Heure Simulation: 17:30 | Personne: Jean Jean | Statut: Administration | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: REFUSE | Raison: Statut 'Administratif' non reconnu dans le systeme
+
+[REEL: 2025-10-27 21:37:32]DEMANDE_ACCES - Heure Simulation: 17:45 | Personne: Henri Alexis | Statut: Professeur | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:37:33]DEMANDE_ACCES - Heure Simulation: 18:00 | Personne: Rio Martin | Statut: Eleve | Lecteur: ZoneSecurisee | Localisation: Batiment B - Zone Securisee | Resulat: REFUSE | Raison: Badge inactif ou invalide
+
+[REEL: 2025-10-27 21:49:38]SCHEDULER - Debut de la simulation
+
+[REEL: 2025-10-27 21:49:38]DEMANDE_ACCES - Heure Simulation: 07:30 | Personne: Tichon Flavie | Statut: Securite | Lecteur: SalleProfesseur | Localisation: Batiment A - Salle des Professeurs | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:49:40]DEMANDE_ACCES - Heure Simulation: 08:00 | Personne: Blanc Marc | Statut: Professeur, Chercheur | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:49:41]DEMANDE_ACCES - Heure Simulation: 08:15 | Personne: Caillou Pierre | Statut: Eleve, Professeur | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:49:42]DEMANDE_ACCES - Heure Simulation: 08:30 | Personne: Caillou Pierre | Statut: Eleve, Professeur | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Aucun des statuts (Eleve, Professeur) ne permet l'acces a 'Laboratoire'
+
+[REEL: 2025-10-27 21:49:43]DEMANDE_ACCES - Heure Simulation: 08:45 | Personne: Caillou Pierre | Statut: Eleve, Professeur | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Aucun des statuts (Eleve, Professeur) ne permet l'acces a 'Laboratoire'
+
+[REEL: 2025-10-27 21:49:44]DEMANDE_ACCES - Heure Simulation: 09:00 | Personne: Tichon Flavie | Statut: Securite | Lecteur: ZoneAdministrative | Localisation: Batiment A - Zone Administrative | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:49:45]DEMANDE_ACCES - Heure Simulation: 09:15 | Personne: Fevri Hugo | Statut: Securite | Lecteur: Bibliotheque | Localisation: Batiment A - Bibliotheque | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:49:46]DEMANDE_ACCES - Heure Simulation: 09:30 | Personne: Bois Lila | Statut: Eleve | Lecteur: ZoneSecurisee | Localisation: Batiment B - Zone Securisee | Resulat: REFUSE | Raison: Eleve n'a pas l'autorisation d'acceder a 'ZoneSecurisee'
+
+[REEL: 2025-10-27 21:49:47]DEMANDE_ACCES - Heure Simulation: 09:45 | Personne: Poule Marie | Statut: Eleve | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:49:50]DEMANDE_ACCES - Heure Simulation: 10:30 | Personne: Fevri Hugo | Statut: Securite | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:49:51]DEMANDE_ACCES - Heure Simulation: 10:45 | Personne: Didio Valerie | Statut: Eleve | Lecteur: SalleProfesseur | Localisation: Batiment A - Salle des Professeurs | Resulat: REFUSE | Raison: Eleve n'a pas l'autorisation d'acceder a 'SalleProfesseur'
+
+[REEL: 2025-10-27 21:49:52]DEMANDE_ACCES - Heure Simulation: 11:00 | Personne: Henri Alexis | Statut: Professeur | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Professeur n'a pas l'autorisation d'acceder a 'Laboratoire'
+
+[REEL: 2025-10-27 21:49:53]DEMANDE_ACCES - Heure Simulation: 11:15 | Personne: Fevri Hugo | Statut: Securite | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Securite n'a pas l'autorisation d'acceder a 'Laboratoire'
+
+[REEL: 2025-10-27 21:49:54]DEMANDE_ACCES - Heure Simulation: 11:30 | Personne: Jean Jean | Statut: Administration | Lecteur: Cafeteria | Localisation: Batiment C - Cafeteria | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:49:55]DEMANDE_ACCES - Heure Simulation: 11:45 | Personne: Henri Alexis | Statut: Professeur | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Professeur n'a pas l'autorisation d'acceder a 'Laboratoire'
+
+[REEL: 2025-10-27 21:49:56]DEMANDE_ACCES - Heure Simulation: 12:00 | Personne: Jean Jean | Statut: Administration | Lecteur: Batiment | Localisation: Batiment C - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:49:57]DEMANDE_ACCES - Heure Simulation: 12:15 | Personne: Henri Alexis | Statut: Professeur | Lecteur: Laboratoire | Localisation: Batiment B - Laboratoire | Resulat: REFUSE | Raison: Professeur n'a pas l'autorisation d'acceder a 'Laboratoire'
+
+[REEL: 2025-10-27 21:49:58]DEMANDE_ACCES - Heure Simulation: 12:30 | Personne: Tichon Flavie | Statut: Securite | Lecteur: Bibliotheque | Localisation: Batiment A - Bibliotheque | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:49:59]DEMANDE_ACCES - Heure Simulation: 12:45 | Personne: Fevri Hugo | Statut: Securite | Lecteur: Bibliotheque | Localisation: Batiment A - Bibliotheque | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:02]DEMANDE_ACCES - Heure Simulation: 13:30 | Personne: Blanc Marc | Statut: Professeur, Chercheur | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:03]DEMANDE_ACCES - Heure Simulation: 13:45 | Personne: Jean Jean | Statut: Administration | Lecteur: Bibliotheque | Localisation: Batiment A - Bibliotheque | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:04]DEMANDE_ACCES - Heure Simulation: 14:00 | Personne: Henri Alexis | Statut: Professeur | Lecteur: Batiment | Localisation: Batiment C - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:05]DEMANDE_ACCES - Heure Simulation: 14:15 | Personne: Petit Sylvie | Statut: Administration | Lecteur: Batiment | Localisation: Batiment A - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:06]DEMANDE_ACCES - Heure Simulation: 14:30 | Personne: Henri Alexis | Statut: Professeur | Lecteur: ZoneAdministrative | Localisation: Batiment A - Zone Administrative | Resulat: REFUSE | Raison: Professeur n'a pas l'autorisation d'acceder a 'ZoneAdministrative'
+
+[REEL: 2025-10-27 21:50:08]DEMANDE_ACCES - Heure Simulation: 15:00 | Personne: Bois Lila | Statut: Eleve | Lecteur: Batiment | Localisation: Batiment C - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:10]DEMANDE_ACCES - Heure Simulation: 15:15 | Personne: Henri Alexis | Statut: Professeur | Lecteur: Batiment | Localisation: Batiment C - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:11]DEMANDE_ACCES - Heure Simulation: 15:30 | Personne: Didio Valerie | Statut: Eleve | Lecteur: Bibliotheque | Localisation: Batiment A - Bibliotheque | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:12]DEMANDE_ACCES - Heure Simulation: 15:45 | Personne: Henri Alexis | Statut: Professeur | Lecteur: Cafeteria | Localisation: Batiment C - Cafeteria | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:13]DEMANDE_ACCES - Heure Simulation: 16:00 | Personne: Fevri Hugo | Statut: Securite | Lecteur: Batiment | Localisation: Batiment C - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:14]DEMANDE_ACCES - Heure Simulation: 16:15 | Personne: Tichon Flavie | Statut: Securite | Lecteur: Batiment | Localisation: Batiment B - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:15]DEMANDE_ACCES - Heure Simulation: 16:30 | Personne: Didio Valerie | Statut: Eleve | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:16]DEMANDE_ACCES - Heure Simulation: 16:45 | Personne: Fevri Hugo | Statut: Securite | Lecteur: Batiment | Localisation: Batiment C - Porte Principale | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:17]DEMANDE_ACCES - Heure Simulation: 17:00 | Personne: Blanc Marc | Statut: Professeur, Chercheur | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:18]DEMANDE_ACCES - Heure Simulation: 17:15 | Personne: Petit Sylvie | Statut: Administration | Lecteur: Bibliotheque | Localisation: Batiment A - Bibliotheque | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:19]DEMANDE_ACCES - Heure Simulation: 17:30 | Personne: Fevri Hugo | Statut: Securite | Lecteur: ZoneSecurisee | Localisation: Batiment B - Zone Securisee | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:20]DEMANDE_ACCES - Heure Simulation: 17:45 | Personne: Henri Alexis | Statut: Professeur | Lecteur: Classe | Localisation: Batiment A - Salle1 | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:21]DEMANDE_ACCES - Heure Simulation: 18:00 | Personne: Fevri Hugo | Statut: Securite | Lecteur: Bibliotheque | Localisation: Batiment A - Bibliotheque | Resulat: AUTORISE
+
+[REEL: 2025-10-27 21:50:22]DEMANDE_ACCES - Heure Simulation: 18:15 | Personne: Tichon Flavie | Statut: Securite | Lecteur: ZoneSecurisee | Localisation: Batiment B - Zone Securisee | Resulat: AUTORISE

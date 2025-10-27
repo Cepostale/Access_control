@@ -9,7 +9,7 @@ namespace StatutTypes {
     extern const char Chercheur[];
     extern const char Eleve[];
     extern const char Professeur[];
-    extern const char Administratif[];
+    extern const char Administration[];
     extern const char Securite[];
 }
 
