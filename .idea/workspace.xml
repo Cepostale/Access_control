@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="Projet2025" targetName="Projet2025" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36ece0ea-864b-4c65-b291-256ce82b0771" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Projet2025.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DescriptionFile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DescriptionFile.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogFile.log" beforeDir="false" afterPath="$PROJECT_DIR$/LogFile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rapport_AP4A_TP1B_Journet_Celia.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML_AP4A_TP1B_Journet_Celia.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML_AP4A_TP1B_Journet_Celia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-739b623195c37633b63e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-a51aa288b065f9d32534.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-784ca5ead9e216dfd49e.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-784ca5ead9e216dfd49e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2025-10-27T20-34-05-0901.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Projet2025-Debug-a92dfb7f2edd64209d5a.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Projet2025-Debug-a92dfb7f2edd64209d5a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-54b06e8405ab6a6aea0c.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-54b06e8405ab6a6aea0c.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Projet2025.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Projet2025.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Badge.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Badge.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/HeritageBadge.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/HeritageBadge.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/HeritageLecteur.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/HeritageLecteur.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/HeritagePersonne.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/HeritagePersonne.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/LecteurBadge.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/LecteurBadge.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Personne.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Personne.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Scheduler.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Scheduler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Serveur.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Serveur.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Badge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Badge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HeritageBadge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/HeritageBadge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LecteurBadge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LecteurBadge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personne.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Personne.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scheduler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scheduler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Serveur.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serveur.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$pport_AP4A_TP1B_Journet_Celia.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/~WRL0003.tmp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="3" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="32pYQfyVYJqSispWMq1t9jVCW7J" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "CMake Application.Projet2025.executor": "Run",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.west.config.association.type.startup.service": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/journ/Documents/Branche1/AP4/TD4",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/journ/Documents/Branche1/AP4/C++/Projet2025/main.cpp",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\journ\Documents\Branche1\AP4\C++\Projet2025\src" />
+      <recent name="C:\Users\journ\Documents\Branche1\AP4\C++\Projet2025\include" />
+      <recent name="C:\Users\journ\Documents\Branche1\AP4\C++\Projet2025" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Projet2025" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Projet2025" TARGET_NAME="Projet2025" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Projet2025" RUN_TARGET_NAME="Projet2025">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36ece0ea-864b-4c65-b291-256ce82b0771" name="Changes" comment="" />
+      <created>1758118965893</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758118965893</updated>
+      <workItem from="1758118967513" duration="5218000" />
+      <workItem from="1758186238497" duration="2797000" />
+      <workItem from="1758193451340" duration="1379000" />
+      <workItem from="1758214206500" duration="744000" />
+      <workItem from="1758263354455" duration="896000" />
+      <workItem from="1758371631087" duration="12309000" />
+      <workItem from="1758481062433" duration="5130000" />
+      <workItem from="1758622711418" duration="511000" />
+      <workItem from="1758700440967" duration="10291000" />
+      <workItem from="1758739245272" duration="6339000" />
+      <workItem from="1758783794781" duration="1003000" />
+      <workItem from="1758790620081" duration="3097000" />
+      <workItem from="1758869613042" duration="2187000" />
+      <workItem from="1759130815620" duration="2000" />
+      <workItem from="1759306410957" duration="19629000" />
+      <workItem from="1759926721730" duration="3734000" />
+      <workItem from="1760076490043" duration="1469000" />
+      <workItem from="1760189668686" duration="14294000" />
+      <workItem from="1760266432587" duration="4036000" />
+      <workItem from="1760342870185" duration="394000" />
+      <workItem from="1760517346854" duration="12095000" />
+      <workItem from="1760537765148" duration="9477000" />
+      <workItem from="1760558021217" duration="2463000" />
+      <workItem from="1760594598354" duration="1413000" />
+      <workItem from="1760598231093" duration="1943000" />
+      <workItem from="1760683295334" duration="485000" />
+      <workItem from="1760879622270" duration="17697000" />
+      <workItem from="1760960185268" duration="1628000" />
+      <workItem from="1761036066105" duration="5128000" />
+      <workItem from="1761212044222" duration="1337000" />
+      <workItem from="1761335152979" duration="3052000" />
+      <workItem from="1761384347639" duration="92000" />
+      <workItem from="1761568230673" duration="7444000" />
+      <workItem from="1761599302425" duration="1027000" />
+      <workItem from="1761646162690" duration="18432000" />
+      <workItem from="1762291864966" duration="323000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+</project>
