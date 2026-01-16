@@ -28,6 +28,7 @@ The project is divided into three logical layers,ensuring a strict separation be
 - **LecteurBadge.h:** Simulates the physical hardware located at doors. It interfaces with the `Serveur` to request authorization
 
 ## 📁 Project Structure
+```
 .
 ├── include/           # Header files (.h)
 │   ├── Serveur.h      # Decision logic & Structs
@@ -40,20 +41,23 @@ The project is divided into three logical layers,ensuring a strict separation be
 │   └── ...
 ├── main.cpp           # Entry point (Simulation Runner)
 └── CMakeLists.txt     # Build configuration
+```
 
 ## 🚀 Installation & Execution
 Via CMake
-### 1. Create build directory
+```
+# 1. Create build directory
 mkdir build && cd build
 
-### 2. Configure the project
+# 2. Configure the project
 cmake ..
 
-### 3. Build the executable
+# 3. Build the executable
 cmake --build .
 
-### 4. Run the simulation
+# 4. Run the simulation
 ./Projet2025
+```
 
 ## ⚙️ Key Features
 - **Real-time Logging:** Generates a `fichierLogs` containing every access attempt with dual timestamps (Real-world time vs. Simulation time).
